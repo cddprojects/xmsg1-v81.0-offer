@@ -675,7 +675,7 @@
     }
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       text-align: center;
     }
@@ -781,7 +781,7 @@
        Tablet (≤ 768px)
     ═══════════════════════════════ */
     @media (max-width: 768px) {
-      .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
       .income-tiers { grid-template-columns: 1fr; }
       .hiw-timeline { grid-template-columns: 1fr; gap: 28px; }
       .hiw-timeline::before { display: none; }
@@ -1247,10 +1247,6 @@
       <div>
         <div class="stat-val"><em>7</em> days</div>
         <div class="stat-label">To first payout</div>
-      </div>
-      <div>
-        <div class="stat-val"><em>$0</em></div>
-        <div class="stat-label">To register</div>
       </div>
     </div>
   </div>
