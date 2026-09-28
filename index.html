@@ -523,17 +523,17 @@
     .mini-cta-text { flex: 1; min-width: 200px; }
     .mini-cta-text h4 { font-family: var(--font-display); font-size: 1.3rem; color: #fff; margin-bottom: 5px; letter-spacing: -0.01em; }
     .mini-cta-text p  { font-size: 0.84rem; color: rgba(255,255,255,0.68); line-height: 1.55; }
-    .mini-cta-form { display: flex; gap: 10px; flex-wrap: wrap; }
-    .mini-cta-form input[type="tel"] {
+    .mini-cta-form { display: flex; flex-direction: column; gap: 9px; min-width: 280px; }
+    .mini-cta-form input {
       background: rgba(255,255,255,0.15);
       border: 1.5px solid rgba(255,255,255,0.28);
-      color: #fff; font-size: 0.94rem;
+      color: #fff; font-size: 0.92rem;
       padding: 12px 16px; border-radius: var(--radius-sm);
-      outline: none; min-width: 180px;
+      outline: none; width: 100%;
       transition: border-color 0.2s;
     }
-    .mini-cta-form input[type="tel"]::placeholder { color: rgba(255,255,255,0.42); }
-    .mini-cta-form input[type="tel"]:focus { border-color: rgba(255,255,255,0.68); }
+    .mini-cta-form input::placeholder { color: rgba(255,255,255,0.42); }
+    .mini-cta-form input:focus { border-color: rgba(255,255,255,0.68); }
 
     /* ═══════════════════════════════════════
        TESTIMONIALS — editorial hierarchy
@@ -738,20 +738,19 @@
       margin-bottom: 36px; line-height: 1.76; position: relative;
     }
     .final-form {
-      display: flex; gap: 10px;
-      justify-content: center; flex-wrap: wrap;
-      max-width: 420px; margin-inline: auto; position: relative;
+      display: flex; flex-direction: column; gap: 10px;
+      max-width: 380px; margin-inline: auto; position: relative;
     }
-    .final-form input[type="tel"] {
-      flex: 1; min-width: 170px;
+    .final-form input {
+      width: 100%;
       background: rgba(255,255,255,0.1);
       border: 1.5px solid rgba(255,255,255,0.2);
       color: #fff; font-size: 0.96rem;
       padding: 14px 17px; border-radius: var(--radius-sm);
       outline: none; transition: border-color 0.2s;
     }
-    .final-form input[type="tel"]::placeholder { color: rgba(255,255,255,0.36); }
-    .final-form input[type="tel"]:focus { border-color: #7de8b4; }
+    .final-form input::placeholder { color: rgba(255,255,255,0.36); }
+    .final-form input:focus { border-color: #7de8b4; }
     .form-note { font-size: 0.73rem; color: rgba(255,255,255,0.36); margin-top: 12px; position: relative; }
 
     /* ─── Footer ────────────────────── */
@@ -828,11 +827,10 @@
       input[type="range"]::-webkit-slider-thumb { width: 26px; height: 26px; }
 
       .mini-cta { padding: 28px 22px; }
-      .mini-cta-form { flex-direction: column; width: 100%; }
-      .mini-cta-form input[type="tel"], .mini-cta-form .btn-green { width: 100%; }
+      .mini-cta-form { width: 100%; }
+      .mini-cta-form .btn-hero { width: 100%; }
 
-      .final-form { flex-direction: column; gap: 10px; }
-      .final-form input[type="tel"], .final-form .btn-hero { width: 100%; }
+      .final-form .btn-hero { width: 100%; }
 
       .wa-text { display: none; }
       .wa-float { border-radius: 50%; padding: 14px; }
@@ -1110,7 +1108,9 @@
         <p>Drop your number — our team will WhatsApp you within the hour. No commitment, no pressure.</p>
       </div>
       <form class="mini-cta-form" onsubmit="handleMiniApply(event)">
-        <input type="tel" placeholder="+65 9123 4567" id="miniPhone" />
+        <input type="text"  placeholder="Your name"             id="miniName"  required />
+        <input type="email" placeholder="Email address"          id="miniEmail" required />
+        <input type="tel"   placeholder="WhatsApp number (+65)"  id="miniPhone" required />
         <button type="submit" class="btn-hero">Get in Touch →</button>
       </form>
     </div>
@@ -1302,7 +1302,9 @@
         Drop your number. Our Singapore team will WhatsApp you within the hour — no commitment, no pressure.
       </p>
       <form class="final-form" onsubmit="handleApply(event)">
-        <input type="tel" placeholder="+65 9123 4567" id="phoneInput" />
+        <input type="text"  placeholder="Your name"             id="appName"  required />
+        <input type="email" placeholder="Email address"          id="appEmail" required />
+        <input type="tel"   placeholder="WhatsApp number (+65)"  id="phoneInput" required />
         <button type="submit" class="btn-hero">Start My Side Job →</button>
       </form>
       <p class="form-note">🔒 Your number stays private. We don't share it or spam.</p>
@@ -1358,17 +1360,25 @@
 
   function handleMiniApply(e) {
     e.preventDefault();
+    const name  = document.getElementById('miniName').value.trim();
+    const email = document.getElementById('miniEmail').value.trim();
     const phone = document.getElementById('miniPhone').value.trim();
-    if (!phone) { alert('Please enter your phone number.'); return; }
-    const msg = encodeURIComponent(`Hi FlexEarn SG! I'm interested in the part-time work from home opportunity. My number is ${phone}.`);
+    if (!name || !email || !phone) { alert('Please fill in all fields.'); return; }
+    const msg = encodeURIComponent(
+      `Hi FlexEarn SG! I'm interested in the part-time work from home opportunity.\n\nName: ${name}\nEmail: ${email}\nWhatsApp: ${phone}`
+    );
     window.open(`https://wa.me/6591234567?text=${msg}`, '_blank');
   }
 
   function handleApply(e) {
     e.preventDefault();
+    const name  = document.getElementById('appName').value.trim();
+    const email = document.getElementById('appEmail').value.trim();
     const phone = document.getElementById('phoneInput').value.trim();
-    if (!phone) { alert('Please enter your phone number.'); return; }
-    const msg = encodeURIComponent(`Hi FlexEarn SG! I'd like to start earning with FlexEarn. My number is ${phone}.`);
+    if (!name || !email || !phone) { alert('Please fill in all fields.'); return; }
+    const msg = encodeURIComponent(
+      `Hi FlexEarn SG! I'd like to start earning with FlexEarn.\n\nName: ${name}\nEmail: ${email}\nWhatsApp: ${phone}`
+    );
     window.open(`https://wa.me/6591234567?text=${msg}`, '_blank');
   }
 
