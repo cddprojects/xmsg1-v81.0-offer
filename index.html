@@ -780,6 +780,38 @@
     .wa-float:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(37,211,102,0.42); }
     .wa-float svg { width: 19px; height: 19px; flex-shrink: 0; }
 
+    /* Mobile-only mid-page CTA — shows after Dream on ≤480px only */
+    .mobile-cta-break { display: none; }
+
+    @media (max-width: 480px) {
+      .mobile-cta-break {
+        display: block;
+        background: var(--green);
+        padding: 32px 24px;
+        text-align: center;
+      }
+      .mobile-cta-break p {
+        color: rgba(255,255,255,0.72);
+        font-size: 0.9rem;
+        margin-bottom: 18px;
+        line-height: 1.6;
+      }
+      .btn-wa-inline {
+        background: #fff;
+        color: var(--green);
+        font-weight: 800;
+        font-size: 0.95rem;
+        padding: 14px 24px;
+        border-radius: var(--radius-sm);
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+      }
+      .btn-wa-inline svg { width: 18px; height: 18px; flex-shrink: 0; }
+      /* Slogans add scroll but no conversion value on mobile */
+      .slogans { display: none; }
+    }
+
     /* ═══════════════════════════════
        Tablet (≤ 768px)
     ═══════════════════════════════ */
@@ -904,6 +936,30 @@
   </div>
 </section>
 
+<!-- ═══ STATS ══════════════════════════════════════════════ -->
+<section class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-val"><em>8,400</em>+</div>
+        <div class="stat-label">Members earning extra</div>
+      </div>
+      <div>
+        <div class="stat-val">$<em>2.1M</em></div>
+        <div class="stat-label">Paid out this year</div>
+      </div>
+      <div>
+        <div class="stat-val"><em>4.8</em>★</div>
+        <div class="stat-label">Member satisfaction</div>
+      </div>
+      <div>
+        <div class="stat-val"><em>7</em> days</div>
+        <div class="stat-label">To first payout</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ PAIN — editorial rows, LEFT intro ════════════════ -->
 <section class="section pain-section" id="why">
   <div class="container">
@@ -982,6 +1038,80 @@
         <div class="dream-item-text">
           <h4>Feel like you're actually getting ahead — not just keeping up.</h4>
           <p>That feeling matters more than people admit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mobile-only quick CTA — low-friction action for early converters -->
+<section class="mobile-cta-break">
+  <p>Interested? Our team will reach out within 24 hours.</p>
+  <a href="https://wa.me/6591234567?text=Hi%20FlexEarn%20SG%21%20I%27d%20like%20to%20find%20out%20more." class="btn-wa-inline" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Chat With Us on WhatsApp
+  </a>
+</section>
+
+<!-- ═══ TESTIMONIALS — moved before form for trust-first flow ══════════════════════ -->
+<section class="section testi-section">
+  <div class="container">
+    <div class="intro-center">
+      <div class="section-tag gold">Real Members. Real Stories.</div>
+      <h2 class="section-title">They Were in the Same Place<br />You Are Right Now.</h2>
+      <p class="section-sub">Ordinary Singaporeans who decided to do something about it — and quietly changed how their month feels.</p>
+    </div>
+
+    <div class="testi-featured">
+      <div class="testi-featured-stars">★★★★★</div>
+      <p class="testi-featured-text">
+        "My son kept asking about piano lessons. Every time I said 'not yet', the truth was I couldn't afford it. Three months after joining FlexEarn, I enrolled him. <em>I cried in the car — not from sadness, but because I finally could.</em>"
+      </p>
+      <div class="testi-featured-author">
+        <div class="avatar-lg av1">JL</div>
+        <div>
+          <div class="testi-featured-name">Jamie L., 38</div>
+          <div class="testi-featured-role">Primary school teacher · Tampines · Part-time, from home</div>
+        </div>
+        <div class="testi-featured-badge">+$900/mo</div>
+      </div>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-body">"I was between jobs and genuinely scared. FlexEarn gave me income when I needed it most. <em>It gave us room to breathe again</em> — and that made everything else feel manageable."</p>
+        <div class="testi-author">
+          <div class="avatar av4">DT</div>
+          <div><div class="author-name">Daniel T., 41</div><div class="author-role">Marketing executive · Bishan</div></div>
+          <div class="testi-badge">+$2,100/mo</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-body">"I'm a housewife. Three hours every morning while the kids are at school. <em>Small income, but mine. It changed how I feel about myself.</em>"</p>
+        <div class="testi-author">
+          <div class="avatar av3">SN</div>
+          <div><div class="author-name">Siti N., 35</div><div class="author-role">Full-time parent · Jurong West</div></div>
+          <div class="testi-badge">+$1,050/mo</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-body">"CPF helps, but after daily expenses there's not much left. <em>I didn't want to rely on my children — I wanted to take care of myself.</em> Brought my wife for our anniversary dinner. First time in six years."</p>
+        <div class="testi-author">
+          <div class="avatar av5">MC</div>
+          <div><div class="author-name">Mr. Chong, 63</div><div class="author-role">Retiree · Toa Payoh</div></div>
+          <div class="testi-badge">+$750/mo</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-body">"Three years in admin and my salary barely moved. Eight hours a week after office hours. <em>First time in a long time I actually feel like I'm winning.</em>"</p>
+        <div class="testi-author">
+          <div class="avatar av2">ML</div>
+          <div><div class="author-name">Mei Lin</div><div class="author-role">Admin Executive · Ang Mo Kio</div></div>
+          <div class="testi-badge">+$850/mo</div>
         </div>
       </div>
     </div>
@@ -1120,96 +1250,6 @@
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS — CENTER intro ══════════════════════ -->
-<section class="section testi-section">
-  <div class="container">
-    <div class="intro-center">
-      <div class="section-tag gold">Real Members. Real Stories.</div>
-      <h2 class="section-title">They Were in the Same Place<br />You Are Right Now.</h2>
-      <p class="section-sub">Ordinary Singaporeans who decided to do something about it — and quietly changed how their month feels.</p>
-    </div>
-
-    <!-- Featured testimonial -->
-    <div class="testi-featured">
-      <div class="testi-featured-stars">★★★★★</div>
-      <p class="testi-featured-text">
-        "My son kept asking about piano lessons. Every time I said 'not yet', the truth was I couldn't afford it. Three months after joining FlexEarn, I enrolled him. <em>I cried in the car — not from sadness, but because I finally could.</em>"
-      </p>
-      <div class="testi-featured-author">
-        <div class="avatar-lg av1">JL</div>
-        <div>
-          <div class="testi-featured-name">Jamie L., 38</div>
-          <div class="testi-featured-role">Primary school teacher · Tampines · Part-time, from home</div>
-        </div>
-        <div class="testi-featured-badge">+$900/mo</div>
-      </div>
-    </div>
-
-    <!-- Supporting 4 cards -->
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-body">
-          "I was between jobs and genuinely scared. FlexEarn gave me income when I needed it most. <em>It gave us room to breathe again</em> — and that made everything else feel manageable."
-        </p>
-        <div class="testi-author">
-          <div class="avatar av4">DT</div>
-          <div>
-            <div class="author-name">Daniel T., 41</div>
-            <div class="author-role">Marketing executive · Bishan</div>
-          </div>
-          <div class="testi-badge">+$2,100/mo</div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-body">
-          "I'm a housewife. I always felt like I wasn't contributing. Three hours every morning while the kids are at school. <em>Small income, but mine. It changed how I feel about myself.</em>"
-        </p>
-        <div class="testi-author">
-          <div class="avatar av3">SN</div>
-          <div>
-            <div class="author-name">Siti N., 35</div>
-            <div class="author-role">Full-time parent · Jurong West</div>
-          </div>
-          <div class="testi-badge">+$1,050/mo</div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-body">
-          "CPF helps, but after daily expenses there's not much left. <em>I didn't want to rely on my children — I wanted to take care of myself.</em> Brought my wife for our anniversary dinner. First time in six years."
-        </p>
-        <div class="testi-author">
-          <div class="avatar av5">MC</div>
-          <div>
-            <div class="author-name">Mr. Chong, 63</div>
-            <div class="author-role">Retiree · Toa Payoh</div>
-          </div>
-          <div class="testi-badge">+$750/mo</div>
-        </div>
-      </div>
-
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-body">
-          "Three years in admin and my salary barely moved. Eight hours a week after office hours. Last month I cleared my study loan two years ahead of schedule. <em>First time in a long time I actually feel like I'm winning.</em>"
-        </p>
-        <div class="testi-author">
-          <div class="avatar av2">ML</div>
-          <div>
-            <div class="author-name">Mei Lin</div>
-            <div class="author-role">Admin Executive · Ang Mo Kio</div>
-          </div>
-          <div class="testi-badge">+$850/mo</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══ LETTER — CENTER intro ════════════════════════════ -->
 <section class="letter-section">
   <div class="container">
@@ -1226,30 +1266,6 @@
       <div class="letter-sig">
         <strong>The FlexEarn SG Team</strong>
         Registered Singapore company · PDPA Compliant · Since 2021
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ STATS ══════════════════════════════════════════════ -->
-<section class="stats-strip">
-  <div class="container">
-    <div class="stats-grid">
-      <div>
-        <div class="stat-val"><em>8,400</em>+</div>
-        <div class="stat-label">Members earning extra</div>
-      </div>
-      <div>
-        <div class="stat-val">$<em>2.1M</em></div>
-        <div class="stat-label">Paid out this year</div>
-      </div>
-      <div>
-        <div class="stat-val"><em>4.8</em>★</div>
-        <div class="stat-label">Member satisfaction</div>
-      </div>
-      <div>
-        <div class="stat-val"><em>7</em> days</div>
-        <div class="stat-label">To first payout</div>
       </div>
     </div>
   </div>
