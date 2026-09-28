@@ -1108,7 +1108,7 @@
     <div class="mini-cta">
       <div class="mini-cta-text">
         <h4>Like what you see?</h4>
-        <p>Drop your number — our team will WhatsApp you within the hour. No commitment, no pressure.</p>
+        <p>Fill in your details — our team will reach out via WhatsApp within 24 hours if you're a good fit.</p>
       </div>
       <form class="mini-cta-form" onsubmit="handleMiniApply(event)">
         <input type="text"  placeholder="Your name"             id="miniName"  required />
@@ -1302,15 +1302,10 @@
         You Just Need to Have <em>More Options.</em>
       </h2>
       <p class="cta-body">
-        Drop your number. Our Singapore team will WhatsApp you within the hour — no commitment, no pressure.
+        Thousands of Singaporeans are already building a flexible secondary income alongside their day job. Fill in your details above — or reach us directly on WhatsApp.
       </p>
-      <form class="final-form" onsubmit="handleApply(event)">
-        <input type="text"  placeholder="Your name"             id="appName"  required />
-        <input type="email" placeholder="Email address"          id="appEmail" required />
-        <input type="tel"   placeholder="WhatsApp number (+65)"  id="phoneInput" required />
-        <button type="submit" class="btn-hero">Start My Side Job →</button>
-      </form>
-      <p class="form-note">🔒 Your number stays private. We don't share it or spam.</p>
+      <a href="https://wa.me/6591234567?text=Hi%20FlexEarn%20SG%21%20I%27d%20like%20to%20find%20out%20more%20about%20the%20part-time%20work%20from%20home%20opportunity." class="btn-hero" target="_blank" rel="noopener">Chat With Us on WhatsApp →</a>
+      <p class="form-note">🔒 Your details stay private. We don't share or spam.</p>
     </div>
   </div>
 </div>
@@ -1373,17 +1368,6 @@
     window.open(`https://wa.me/6591234567?text=${msg}`, '_blank');
   }
 
-  function handleApply(e) {
-    e.preventDefault();
-    const name  = document.getElementById('appName').value.trim();
-    const email = document.getElementById('appEmail').value.trim();
-    const phone = document.getElementById('phoneInput').value.trim();
-    if (!name || !email || !phone) { alert('Please fill in all fields.'); return; }
-    const msg = encodeURIComponent(
-      `Hi FlexEarn SG! I'd like to start earning with FlexEarn.\n\nName: ${name}\nEmail: ${email}\nWhatsApp: ${phone}`
-    );
-    window.open(`https://wa.me/6591234567?text=${msg}`, '_blank');
-  }
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
