@@ -389,8 +389,6 @@
       display: flex; justify-content: space-between; align-items: center;
       letter-spacing: 0.01em;
     }
-    .wa-sbar-icons { display: flex; gap: 5px; align-items: center; font-size: 12px; }
-
     /* Header bar */
     .wa-hdr {
       background: #075E54;
@@ -398,7 +396,7 @@
       display: flex; align-items: center; gap: 10px;
       color: #fff;
     }
-    .wa-back { font-size: 19px; color: rgba(255,255,255,0.8); line-height: 1; margin-right: 2px; }
+    .wa-back { display: flex; align-items: center; color: rgba(255,255,255,0.9); margin-right: 2px; flex-shrink: 0; }
     .wa-av {
       width: 38px; height: 38px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
@@ -412,7 +410,8 @@
     .wa-info { flex: 1; min-width: 0; }
     .wa-cname { font-size: 15px; font-weight: 600; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .wa-cstatus { font-size: 12px; color: rgba(255,255,255,0.62); margin-top: 1px; }
-    .wa-hdr-icons { display: flex; gap: 16px; align-items: center; color: rgba(255,255,255,0.75); font-size: 19px; flex-shrink: 0; }
+    .wa-hdr-icons { display: flex; gap: 14px; align-items: center; color: rgba(255,255,255,0.8); flex-shrink: 0; }
+    .wa-hdr-icons svg { display: block; }
 
     /* Chat wallpaper */
     .wa-body {
@@ -493,22 +492,55 @@
       padding: 7px 10px;
       display: flex; align-items: center; gap: 8px;
     }
-    .wa-emoji-btn { font-size: 22px; line-height: 1; color: #9BA6B0; }
+    .wa-emoji-btn { display: flex; align-items: center; color: #9BA6B0; flex-shrink: 0; }
     .wa-input-field {
       flex: 1;
       background: #fff;
       border-radius: 22px;
       padding: 9px 15px;
-      font-size: 14px;
+      font-size: 13.5px;
       color: #9BA6B0;
     }
-    .wa-attach { font-size: 20px; color: #9BA6B0; }
+    .wa-input-right { display: flex; align-items: center; gap: 6px; color: #9BA6B0; flex-shrink: 0; }
     .wa-mic-btn {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: #075E54;
+      width: 42px; height: 42px; border-radius: 50%;
+      background: #00A884;
       display: flex; align-items: center; justify-content: center;
-      font-size: 18px; flex-shrink: 0;
+      color: #fff; flex-shrink: 0;
     }
+    .wa-sbar-icons { display: flex; align-items: center; gap: 5px; color: rgba(255,255,255,0.88); }
+
+    /* Text review cards */
+    .rev-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    @media (min-width: 640px) { .rev-grid { grid-template-columns: repeat(3,1fr); } }
+    .rev-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 20px 18px 18px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column;
+    }
+    .rev-stars { color: #F59E0B; font-size: 14px; letter-spacing: 1.5px; margin-bottom: 10px; }
+    .rev-text { font-size: 13.5px; line-height: 1.7; color: var(--ink); flex: 1; }
+    .rev-foot { display: flex; align-items: center; gap: 10px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+    .rev-av { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0; font-family: var(--body); }
+    .rev-name { font-weight: 600; font-size: 13px; color: var(--ink); line-height: 1.25; }
+    .rev-role { font-size: 11.5px; color: var(--muted); margin-top: 1px; }
+    .rev-goog { margin-left: auto; flex-shrink: 0; }
+
+    /* WA conversations divider */
+    .wa-label {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 28px;
+      font-size: 13.5px; font-weight: 600; color: var(--ink2); letter-spacing: 0.02em;
+    }
+    .wa-label::before, .wa-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
     /* ════════════════════════════════
        SLOGANS
@@ -997,13 +1029,111 @@
 
 <!-- ══ TESTIMONIALS — WhatsApp screenshot mockups ══ -->
 <section class="testi-sec sec">
+  <!-- Hidden SVG icon library -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-sig" viewBox="0 0 17 13">
+      <rect x="0" y="10" width="3" height="3" rx="0.5" fill="currentColor"/>
+      <rect x="4.5" y="7" width="3" height="6" rx="0.5" fill="currentColor"/>
+      <rect x="9" y="4" width="3" height="9" rx="0.5" fill="currentColor"/>
+      <rect x="13.5" y="0.5" width="3" height="12.5" rx="0.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-wfi" viewBox="0 0 16 13">
+      <circle cx="8" cy="12" r="1.5" fill="currentColor"/>
+      <path d="M4.2 8.6a5.3 5.3 0 017.6 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+      <path d="M1 5.3a9.5 9.5 0 0114 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="i-bat" viewBox="0 0 27 13">
+      <rect x="0.75" y="0.75" width="21.5" height="11.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="22.5" y="4" width="3.5" height="5" rx="1.5" fill="currentColor"/>
+      <rect x="2.5" y="2.5" width="15" height="8" rx="1.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-back" viewBox="0 0 11 20">
+      <path d="M9.5 1.5L2 10l7.5 8.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-vid" viewBox="0 0 24 24">
+      <path d="M15 8v8H5V8h10m1-2H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4V7a1 1 0 00-1-1z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-phn" viewBox="0 0 24 24">
+      <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-more" viewBox="0 0 5 22">
+      <circle cx="2.5" cy="3.5" r="2" fill="currentColor"/>
+      <circle cx="2.5" cy="11" r="2" fill="currentColor"/>
+      <circle cx="2.5" cy="18.5" r="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-emoji" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="9" cy="10.5" r="1.2" fill="currentColor"/>
+      <circle cx="15" cy="10.5" r="1.2" fill="currentColor"/>
+      <path d="M8.5 14.5q1.5 2.5 3.5 2.5t3.5-2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24">
+      <path d="M16.5 6v11.5a4 4 0 01-8 0V5a2.5 2.5 0 015 0v10.5a1 1 0 01-2 0V6h-1.5v9.5a2.5 2.5 0 005 0V5a4 4 0 00-8 0v12.5a5.5 5.5 0 0011 0V6h-1.5z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24">
+      <path d="M12 14a3 3 0 003-3V5a3 3 0 00-6 0v6a3 3 0 003 3zm5.9-3c-.49 0-.9.36-.98.85A6 6 0 016.08 11.85c-.08-.49-.49-.85-.98-.85A1 1 0 004.1 12.14a7 7 0 005.9 5.77V20a1 1 0 002 0v-2.09a7 7 0 005.9-5.77A1 1 0 0017.9 11z" fill="currentColor"/>
+    </symbol>
+    <!-- Google G logo mark -->
+    <symbol id="i-google" viewBox="0 0 24 24">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </symbol>
+  </svg>
+
   <div class="c">
 
     <div class="testi-hdr rev">
-      <div class="stag">Real Conversations. Real Results.</div>
-      <h2 class="h2">Actual WhatsApp Chats<br />From Our Members.</h2>
-      <p class="sub">These are real conversations (names changed for privacy). The payments are real. The feelings are real.</p>
+      <div class="stag">Real Reviews. Real Results.</div>
+      <h2 class="h2">What Our Members Say</h2>
+      <p class="sub">Verified reviews from FlexEarn SG members — text and WhatsApp conversations (names changed for privacy).</p>
     </div>
+
+    <!-- ── Text review cards ── -->
+    <div class="rev-grid rev">
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Honestly didn't expect much but kena $750 in my first month doing surveys and mystery shopper tasks. Now I do it on lunch break every day. Very flexible, no boss to answer to!"</p>
+        <div class="rev-foot">
+          <div class="rev-av" style="background:#1B4332">GT</div>
+          <div>
+            <div class="rev-name">Grace T.</div>
+            <div class="rev-role">Accounts Executive, Tampines</div>
+          </div>
+          <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"My delivery job not always steady lah. FlexEarn give me extra $500–$800/month on top. Payment always on time, transfer by PayNow. No need wait one month like some other places."</p>
+        <div class="rev-foot">
+          <div class="rev-av" style="background:#C2410C">AF</div>
+          <div>
+            <div class="rev-name">Ahmad F.</div>
+            <div class="rev-role">Delivery Rider, Jurong West</div>
+          </div>
+          <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"I refer 3 friends already, all earning now. Very transparent — no hidden charge, no GPS tracking, no recruitment fee. This is the real deal. Priya jio me in and I'm so glad she did 🙏"</p>
+        <div class="rev-foot">
+          <div class="rev-av" style="background:#6D28D9">LW</div>
+          <div>
+            <div class="rev-name">Lim W.</div>
+            <div class="rev-role">Part-time admin, Woodlands</div>
+          </div>
+          <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── WhatsApp conversations divider ── -->
+    <div class="wa-label rev">💬 &nbsp;Direct WhatsApp Conversations With Our Members</div>
 
     <div class="wa-grid">
 
@@ -1011,18 +1141,26 @@
       <div class="wa-shot rev">
         <!-- Status bar -->
         <div class="wa-sbar">
-          <span>9:41</span>
-          <div class="wa-sbar-icons"><span>▲▼</span><span>WiFi</span><span>🔋</span></div>
+          <span style="font-size:12.5px;font-weight:600;letter-spacing:0.01em">9:41</span>
+          <div class="wa-sbar-icons">
+            <svg width="17" height="13" viewBox="0 0 17 13"><use href="#i-sig"/></svg>
+            <svg width="16" height="13" viewBox="0 0 16 13"><use href="#i-wfi"/></svg>
+            <svg width="27" height="13" viewBox="0 0 27 13"><use href="#i-bat"/></svg>
+          </div>
         </div>
         <!-- Header -->
         <div class="wa-hdr">
-          <span class="wa-back">‹</span>
+          <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
           <div class="wa-av"><img src="images/sg_jamie1.jpg" alt="Jamie L."></div>
           <div class="wa-info">
             <div class="wa-cname">Jamie L.</div>
             <div class="wa-cstatus">online</div>
           </div>
-          <div class="wa-hdr-icons"><span>📹</span><span>📞</span><span>⋮</span></div>
+          <div class="wa-hdr-icons">
+            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
+            <svg width="5" height="22" viewBox="0 0 5 22"><use href="#i-more"/></svg>
+          </div>
         </div>
         <!-- Chat -->
         <div class="wa-body">
@@ -1075,27 +1213,37 @@
         </div>
         <!-- Input bar -->
         <div class="wa-foot">
-          <span class="wa-emoji-btn">🙂</span>
-          <div class="wa-input-field">Type a message</div>
-          <span class="wa-attach">📎</span>
-          <div class="wa-mic-btn">🎤</div>
+          <span class="wa-emoji-btn"><svg width="26" height="26" viewBox="0 0 24 24"><use href="#i-emoji"/></svg></span>
+          <div class="wa-input-field">Message</div>
+          <div class="wa-input-right">
+            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-clip"/></svg>
+          </div>
+          <div class="wa-mic-btn"><svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-mic"/></svg></div>
         </div>
       </div><!-- end wa-shot 1 -->
 
       <!-- ── Chat 2: Siti N., Housewife ── -->
       <div class="wa-shot rev d1">
         <div class="wa-sbar">
-          <span>11:24</span>
-          <div class="wa-sbar-icons"><span>▲▼</span><span>WiFi</span><span>🔋</span></div>
+          <span style="font-size:12.5px;font-weight:600;letter-spacing:0.01em">11:24</span>
+          <div class="wa-sbar-icons">
+            <svg width="17" height="13" viewBox="0 0 17 13"><use href="#i-sig"/></svg>
+            <svg width="16" height="13" viewBox="0 0 16 13"><use href="#i-wfi"/></svg>
+            <svg width="27" height="13" viewBox="0 0 27 13"><use href="#i-bat"/></svg>
+          </div>
         </div>
         <div class="wa-hdr">
-          <span class="wa-back">‹</span>
+          <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
           <div class="wa-av"><img src="images/sg_a3.jpg" alt="Siti N."></div>
           <div class="wa-info">
             <div class="wa-cname">Siti N.</div>
             <div class="wa-cstatus">last seen today at 11:20</div>
           </div>
-          <div class="wa-hdr-icons"><span>📹</span><span>📞</span><span>⋮</span></div>
+          <div class="wa-hdr-icons">
+            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
+            <svg width="5" height="22" viewBox="0 0 5 22"><use href="#i-more"/></svg>
+          </div>
         </div>
         <div class="wa-body">
           <div class="wa-date">3 weeks ago</div>
@@ -1146,27 +1294,37 @@
 
         </div>
         <div class="wa-foot">
-          <span class="wa-emoji-btn">🙂</span>
-          <div class="wa-input-field">Type a message</div>
-          <span class="wa-attach">📎</span>
-          <div class="wa-mic-btn">🎤</div>
+          <span class="wa-emoji-btn"><svg width="26" height="26" viewBox="0 0 24 24"><use href="#i-emoji"/></svg></span>
+          <div class="wa-input-field">Message</div>
+          <div class="wa-input-right">
+            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-clip"/></svg>
+          </div>
+          <div class="wa-mic-btn"><svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-mic"/></svg></div>
         </div>
       </div><!-- end wa-shot 2 -->
 
       <!-- ── Chat 3: Daniel T., between jobs ── -->
       <div class="wa-shot rev d2">
         <div class="wa-sbar">
-          <span>8:55</span>
-          <div class="wa-sbar-icons"><span>▲▼</span><span>4G</span><span>🔋</span></div>
+          <span style="font-size:12.5px;font-weight:600;letter-spacing:0.01em">8:55</span>
+          <div class="wa-sbar-icons">
+            <svg width="17" height="13" viewBox="0 0 17 13"><use href="#i-sig"/></svg>
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.03em">4G</span>
+            <svg width="27" height="13" viewBox="0 0 27 13"><use href="#i-bat"/></svg>
+          </div>
         </div>
         <div class="wa-hdr">
-          <span class="wa-back">‹</span>
+          <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
           <div class="wa-av"><img src="images/m67.jpg" alt="Daniel T."></div>
           <div class="wa-info">
             <div class="wa-cname">Daniel T.</div>
             <div class="wa-cstatus">online</div>
           </div>
-          <div class="wa-hdr-icons"><span>📹</span><span>📞</span><span>⋮</span></div>
+          <div class="wa-hdr-icons">
+            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
+            <svg width="5" height="22" viewBox="0 0 5 22"><use href="#i-more"/></svg>
+          </div>
         </div>
         <div class="wa-body">
           <div class="wa-date">2 months ago</div>
@@ -1217,16 +1375,18 @@
 
         </div>
         <div class="wa-foot">
-          <span class="wa-emoji-btn">🙂</span>
-          <div class="wa-input-field">Type a message</div>
-          <span class="wa-attach">📎</span>
-          <div class="wa-mic-btn">🎤</div>
+          <span class="wa-emoji-btn"><svg width="26" height="26" viewBox="0 0 24 24"><use href="#i-emoji"/></svg></span>
+          <div class="wa-input-field">Message</div>
+          <div class="wa-input-right">
+            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-clip"/></svg>
+          </div>
+          <div class="wa-mic-btn"><svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-mic"/></svg></div>
         </div>
       </div><!-- end wa-shot 3 -->
 
     </div><!-- end wa-grid -->
 
-    <p style="text-align:center;font-size:0.78rem;color:var(--muted);margin-top:28px">Names changed for privacy. Conversations condensed for display.</p>
+    <p style="text-align:center;font-size:0.78rem;color:var(--muted);margin-top:28px">Names changed for privacy. WhatsApp conversations condensed for display.</p>
 
   </div>
 </section>
