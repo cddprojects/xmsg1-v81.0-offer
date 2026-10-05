@@ -482,11 +482,11 @@
     .wa-txt { font-size: 14.5px; line-height: 1.38; color: #111; word-break: break-word; overflow: hidden; }
 
     /* Timestamp inline bottom-right of bubble (like real WA) */
-    .wa-meta { display: inline-flex; align-items: center; gap: 3px; float: right; margin: 4px 0 0 10px; position: relative; top: 2px; }
-    .wa-ts { font-size: 11px; color: #667781; }
-    .wa-tick { font-size: 14px; line-height: 1; letter-spacing: -2px; }
+    .wa-meta { display: inline-flex; align-items: flex-end; gap: 2px; float: right; margin: 5px 0 0 8px; position: relative; top: 1px; }
+    .wa-ts { font-size: 11px; color: #667781; line-height: 1; }
+    .wa-tick { width: 16px; height: 11px; display: block; flex-shrink: 0; }
     .wa-tick.blue { color: #53BDEB; }
-    .wa-tick.grey { color: #9BA6B0; }
+    .wa-tick.grey { color: #8D9599; }
 
     /* Input bar — light */
     .wa-foot {
@@ -1120,6 +1120,11 @@
     <symbol id="i-back" viewBox="0 0 11 20">
       <path d="M9.5 1.5L2 10l7.5 8.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
+    <!-- WhatsApp double-tick (two overlapping checks) -->
+    <symbol id="i-ticks" viewBox="0 0 16 11">
+      <path d="M0.9 6.2l3.1 3.15L11.4 1.4" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5.15 6.2l3.1 3.15L15.1 1.55" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
     <!-- WhatsApp header: video camera (no circle) -->
     <symbol id="i-vid" viewBox="0 0 24 24">
       <path d="M15.2 8.4v7.2H5.8V8.4h9.4zm.9-1.6H4.9c-.8 0-1.5.7-1.5 1.5v8.4c0 .8.7 1.5 1.5 1.5h11.2c.8 0 1.5-.7 1.5-1.5v-2.6l3.6 2.7V7.3L17.6 10V8.3c0-.8-.7-1.5-1.5-1.5z" fill="currentColor"/>
@@ -1245,17 +1250,17 @@
 
           <div class="wa-msg">
             <div class="wa-s">
-              <div class="wa-txt">eh sis the paynow come liao<div class="wa-meta"><span class="wa-ts">12:13</span><span class="wa-tick grey">✓✓</span></div></div>
+              <div class="wa-txt">eh sis the paynow come liao<div class="wa-meta"><span class="wa-ts">12:13</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
             </div>
           </div>
           <div class="wa-msg">
             <div class="wa-s no-tail">
-              <div class="wa-txt">$1,280 in 11 days sia 😳<div class="wa-meta"><span class="wa-ts">12:13</span><span class="wa-tick grey">✓✓</span></div></div>
+              <div class="wa-txt">$1,280 in 11 days sia 😳<div class="wa-meta"><span class="wa-ts">12:13</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
             </div>
           </div>
           <div class="wa-msg">
             <div class="wa-s no-tail">
-              <div class="wa-txt">i thought scammer one at first hahaha<div class="wa-meta"><span class="wa-ts">12:14</span><span class="wa-tick grey">✓✓</span></div></div>
+              <div class="wa-txt">i thought scammer one at first hahaha<div class="wa-meta"><span class="wa-ts">12:14</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
             </div>
           </div>
 
@@ -1267,12 +1272,12 @@
 
           <div class="wa-msg">
             <div class="wa-s">
-              <div class="wa-txt">wait 14 tasks nia already $1.2k??<div class="wa-meta"><span class="wa-ts">12:25</span><span class="wa-tick grey">✓✓</span></div></div>
+              <div class="wa-txt">wait 14 tasks nia already $1.2k??<div class="wa-meta"><span class="wa-ts">12:25</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
             </div>
           </div>
           <div class="wa-msg">
             <div class="wa-s no-tail">
-              <div class="wa-txt">ok I continue tonight after dinner. thank you ah 🙏<div class="wa-meta"><span class="wa-ts">12:26</span><span class="wa-tick grey">✓✓</span></div></div>
+              <div class="wa-txt">ok I continue tonight after dinner. thank you ah 🙏<div class="wa-meta"><span class="wa-ts">12:26</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
             </div>
           </div>
         </div>
@@ -1314,7 +1319,7 @@
 
           <div class="wa-msg">
             <div class="wa-s">
-              <div class="wa-txt">Good afternoon. Just confirming I received $900 via PayNow this morning. Thank you.<div class="wa-meta"><span class="wa-ts">17:25</span><span class="wa-tick blue">✓✓</span></div></div>
+              <div class="wa-txt">Good afternoon. Just confirming I received $900 via PayNow this morning. Thank you.<div class="wa-meta"><span class="wa-ts">17:25</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
             </div>
           </div>
 
@@ -1326,7 +1331,7 @@
 
           <div class="wa-msg">
             <div class="wa-s">
-              <div class="wa-txt">Noted, I will be there. Appreciate the clear communication.<div class="wa-meta"><span class="wa-ts">17:31</span><span class="wa-tick blue">✓✓</span></div></div>
+              <div class="wa-txt">Noted, I will be there. Appreciate the clear communication.<div class="wa-meta"><span class="wa-ts">17:31</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
             </div>
           </div>
 
@@ -1338,7 +1343,7 @@
 
           <div class="wa-msg">
             <div class="wa-s">
-              <div class="wa-txt">One more qn — can I refer my colleague? Same process?<div class="wa-meta"><span class="wa-ts">17:41</span><span class="wa-tick grey">✓✓</span></div></div>
+              <div class="wa-txt">One more qn — can I refer my colleague? Same process?<div class="wa-meta"><span class="wa-ts">17:41</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
             </div>
           </div>
         </div>
@@ -1382,7 +1387,7 @@
 
           <div class="wa-msg">
             <div class="wa-s">
-              <div class="wa-txt">hi this one confirm no agent fee right? i kena scam before<div class="wa-meta"><span class="wa-ts">08:02</span><span class="wa-tick grey">✓✓</span></div></div>
+              <div class="wa-txt">hi this one confirm no agent fee right? i kena scam before<div class="wa-meta"><span class="wa-ts">08:02</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
             </div>
           </div>
 
@@ -1394,7 +1399,7 @@
 
           <div class="wa-msg">
             <div class="wa-s">
-              <div class="wa-txt">ok I check already. how fast first pay?<div class="wa-meta"><span class="wa-ts">08:14</span><span class="wa-tick grey">✓✓</span></div></div>
+              <div class="wa-txt">ok I check already. how fast first pay?<div class="wa-meta"><span class="wa-ts">08:14</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
             </div>
           </div>
 
@@ -1408,7 +1413,7 @@
 
           <div class="wa-msg">
             <div class="wa-s">
-              <div class="wa-txt">$860 already. 8 days. I tell my sister also join 😭<div class="wa-meta"><span class="wa-ts">08:41</span><span class="wa-tick blue">✓✓</span></div></div>
+              <div class="wa-txt">$860 already. 8 days. I tell my sister also join 😭<div class="wa-meta"><span class="wa-ts">08:41</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
             </div>
           </div>
         </div>
