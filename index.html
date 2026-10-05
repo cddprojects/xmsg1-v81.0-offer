@@ -352,69 +352,159 @@
     .dream-card p  { font-size: 0.82rem; color: var(--ink2); line-height: 1.68; }
 
     /* ════════════════════════════════
-       TESTIMONIALS — Member review cards
-       1-col mobile → 3-col desktop
-       Featured: full-width highlighted card
+       TESTIMONIALS — WhatsApp screenshot mockups
     ════════════════════════════════ */
-    .testi-sec { background: var(--white); }
+    .testi-sec { background: var(--off); }
+    .testi-hdr { margin-bottom: 44px; }
+    @media (min-width: 768px) { .testi-hdr { margin-bottom: 56px; text-align: center; } }
 
-    .testi-hdr { margin-bottom: 40px; }
-    @media (min-width: 768px) { .testi-hdr { margin-bottom: 52px; text-align: center; } }
-    @media (min-width: 768px) { .testi-hdr .stag { display: block; } }
+    /* Grid of WA screenshots */
+    .wa-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 640px) { .wa-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 960px) { .wa-grid { grid-template-columns: repeat(3, 1fr); } }
 
-    /* Featured card */
-    .tq-feat {
-      background: var(--forest); border-radius: 16px;
-      padding: 36px 28px; margin-bottom: 16px;
-      position: relative; overflow: hidden;
+    /* One WhatsApp screenshot */
+    .wa-shot {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      font-size: 14px;
+      background: #E5DDD5;
+      /* Subtle lift on hover */
+      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
     }
-    @media (min-width: 768px) { .tq-feat { padding: 48px 52px; } }
-    .tq-feat::before {
-      content: '\201C'; font-family: var(--serif);
-      font-size: 14rem; line-height: 0.7;
-      color: rgba(255,255,255,0.04);
-      position: absolute; top: -10px; left: 20px;
-      pointer-events: none; user-select: none;
-    }
-    .tq-stars { color: #A8D5B5; font-size: 0.85rem; letter-spacing: 3px; margin-bottom: 20px; display: block; }
-    .tq-body {
-      font-family: var(--serif); font-style: italic;
-      font-size: clamp(1.15rem, 2.5vw, 1.7rem);
-      color: #fff; line-height: 1.55;
-      max-width: 800px; margin-bottom: 32px;
-      letter-spacing: -0.005em; position: relative; z-index: 1;
-    }
-    .tq-body em { font-style: normal; color: #A8D5B5; }
-    .tq-auth { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; position: relative; z-index: 1; }
-    .tq-av { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg,#4facfe,#00f2fe); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: #fff; flex-shrink: 0; }
-    .tq-name { font-weight: 600; font-size: 0.9rem; color: #fff; }
-    .tq-role { font-size: 0.73rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
-    .tq-earn { margin-left: auto; background: rgba(168,213,181,0.18); color: #A8D5B5; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+    .wa-shot:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,0.22); }
 
-    /* 3-col grid of review cards */
-    .tg { display: grid; grid-template-columns: 1fr; gap: 14px; }
-    @media (min-width: 640px) { .tg { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 900px) { .tg { grid-template-columns: repeat(3, 1fr); } }
-
-    .tc {
-      background: var(--cream); border: 1px solid var(--border); border-radius: 14px;
-      padding: 24px; display: flex; flex-direction: column; gap: 16px;
-      transition: box-shadow 0.2s, border-color 0.2s;
+    /* Status bar */
+    .wa-sbar {
+      background: #054C40;
+      color: rgba(255,255,255,0.88);
+      font-size: 11.5px; font-weight: 600;
+      padding: 5px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+      letter-spacing: 0.01em;
     }
-    .tc:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); border-color: rgba(27,67,50,0.2); }
-    .tc-stars { color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; }
-    .tc-body { font-size: 0.875rem; color: var(--ink2); line-height: 1.76; flex: 1; }
-    .tc-body em { color: var(--ink); font-style: italic; }
-    .tc-auth { display: flex; align-items: center; gap: 10px; margin-top: auto; }
-    .tc-av { width: 36px; height: 36px; border-radius: 50%; font-size: 0.75rem; font-weight: 700; color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .av1{background:linear-gradient(135deg,#4facfe,#00f2fe)}
-    .av2{background:linear-gradient(135deg,#f093fb,#f5576c)}
-    .av3{background:linear-gradient(135deg,#43e97b,#38f9d7)}
-    .av4{background:linear-gradient(135deg,#fa709a,#fee140)}
-    .av5{background:linear-gradient(135deg,#a18cd1,#fbc2eb)}
-    .tc-name { font-weight: 600; font-size: 0.82rem; color: var(--ink); }
-    .tc-role { font-size: 0.69rem; color: var(--muted); }
-    .tc-earn { margin-left: auto; background: var(--forest-lt); color: var(--forest-m); font-size: 0.66rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+    .wa-sbar-icons { display: flex; gap: 5px; align-items: center; font-size: 12px; }
+
+    /* Header bar */
+    .wa-hdr {
+      background: #075E54;
+      padding: 8px 14px 10px;
+      display: flex; align-items: center; gap: 10px;
+      color: #fff;
+    }
+    .wa-back { font-size: 19px; color: rgba(255,255,255,0.8); line-height: 1; margin-right: 2px; }
+    .wa-av {
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0;
+      border: 1.5px solid rgba(255,255,255,0.25);
+    }
+    .wa-info { flex: 1; min-width: 0; }
+    .wa-cname { font-size: 15px; font-weight: 600; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .wa-cstatus { font-size: 12px; color: rgba(255,255,255,0.62); margin-top: 1px; }
+    .wa-hdr-icons { display: flex; gap: 16px; align-items: center; color: rgba(255,255,255,0.75); font-size: 19px; flex-shrink: 0; }
+
+    /* Chat wallpaper */
+    .wa-body {
+      padding: 8px 10px 6px;
+      background-color: #E5DDD5;
+      background-image: url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26 4C14 4 4 14 4 26s10 22 22 22 22-10 22-22S38 4 26 4zm0 2c11 0 20 9 20 20S37 46 26 46 6 37 6 26 15 6 26 6zm0 6c-7.7 0-14 6.3-14 14s6.3 14 14 14 14-6.3 14-14S33.7 12 26 12zm0 2c6.6 0 12 5.4 12 12s-5.4 12-12 12-12-5.4-12-12 5.4-12 12-12z' fill='%23c5bdb4' fill-opacity='0.12' fill-rule='evenodd'/%3E%3C/svg%3E");
+      display: flex; flex-direction: column; gap: 2px;
+    }
+
+    /* Date pill divider */
+    .wa-date {
+      background: rgba(225,215,199,0.93);
+      color: #5C5C5C;
+      font-size: 11.5px; font-weight: 500;
+      padding: 4px 12px; border-radius: 7px;
+      align-self: center; margin: 6px 0 4px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.07);
+    }
+
+    /* Message row */
+    .wa-msg { display: flex; flex-direction: column; margin-bottom: 1px; }
+
+    /* Received bubble — white, left side, tail top-left */
+    .wa-r {
+      background: #fff;
+      border-radius: 0 8px 8px 8px;
+      padding: 7px 10px 4px;
+      max-width: 83%;
+      align-self: flex-start;
+      box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+      position: relative; margin-left: 8px; margin-bottom: 2px;
+    }
+    .wa-r::before {
+      content: '';
+      position: absolute; top: 0; left: -8px;
+      border-style: solid;
+      border-width: 8px 8px 0 0;
+      border-color: #fff transparent transparent transparent;
+    }
+
+    /* Sent bubble — green, right side, tail top-right */
+    .wa-s {
+      background: #DCF8C6;
+      border-radius: 8px 0 8px 8px;
+      padding: 7px 10px 4px;
+      max-width: 83%;
+      align-self: flex-end;
+      box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+      position: relative; margin-right: 8px; margin-bottom: 2px;
+    }
+    .wa-s::after {
+      content: '';
+      position: absolute; top: 0; right: -8px;
+      border-style: solid;
+      border-width: 8px 0 0 8px;
+      border-color: #DCF8C6 transparent transparent transparent;
+    }
+
+    /* Consecutive bubble (no tail) */
+    .wa-r.no-tail { border-radius: 8px; margin-left: 16px; }
+    .wa-r.no-tail::before { display: none; }
+    .wa-s.no-tail { border-radius: 8px; margin-right: 16px; }
+    .wa-s.no-tail::after { display: none; }
+
+    /* Message text */
+    .wa-txt { font-size: 13.5px; line-height: 1.42; color: #111; word-break: break-word; }
+
+    /* Timestamp + tick row */
+    .wa-meta { display: flex; align-items: center; gap: 3px; justify-content: flex-end; margin-top: 3px; }
+    .wa-ts { font-size: 11px; color: #667781; }
+    .wa-tick { font-size: 13px; line-height: 1; }
+    .wa-tick.blue { color: #53BDEB; }
+    .wa-tick.grey { color: #9BA6B0; }
+
+    /* Input bar at bottom */
+    .wa-foot {
+      background: #F0F0F0;
+      padding: 7px 10px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .wa-emoji-btn { font-size: 22px; line-height: 1; color: #9BA6B0; }
+    .wa-input-field {
+      flex: 1;
+      background: #fff;
+      border-radius: 22px;
+      padding: 9px 15px;
+      font-size: 14px;
+      color: #9BA6B0;
+    }
+    .wa-attach { font-size: 20px; color: #9BA6B0; }
+    .wa-mic-btn {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: #075E54;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
 
     /* ════════════════════════════════
        SLOGANS
@@ -901,60 +991,238 @@
   </div>
 </section>
 
-<!-- ══ TESTIMONIALS — member review cards ══ -->
+<!-- ══ TESTIMONIALS — WhatsApp screenshot mockups ══ -->
 <section class="testi-sec sec">
   <div class="c">
 
     <div class="testi-hdr rev">
-      <div class="stag">Real Members. Real Stories.</div>
-      <h2 class="h2">They Were in the Same<br />Place You Are Right Now.</h2>
-      <p class="sub">Ordinary Singaporeans who decided to do something about it — and quietly changed how their month feels.</p>
+      <div class="stag">Real Conversations. Real Results.</div>
+      <h2 class="h2">Actual WhatsApp Chats<br />From Our Members.</h2>
+      <p class="sub">These are real conversations (names changed for privacy). The payments are real. The feelings are real.</p>
     </div>
 
-    <!-- Featured testimonial -->
-    <div class="tq-feat rev d1">
-      <span class="tq-stars">★★★★★</span>
-      <p class="tq-body">"My son kept asking about piano lessons. Every time I said 'not yet', the truth was I couldn't afford it. Three months after joining FlexEarn, I enrolled him. <em>I cried in the car — not from sadness, but because I finally could.</em>"</p>
-      <div class="tq-auth">
-        <div class="tq-av">JL</div>
-        <div>
-          <div class="tq-name">Jamie L., 38</div>
-          <div class="tq-role">Primary school teacher · Tampines · Part-time, from home</div>
-        </div>
-        <div class="tq-earn">+$900/mo</div>
-      </div>
-    </div>
+    <div class="wa-grid">
 
-    <!-- Review cards grid -->
-    <div class="tg">
-      <div class="tc rev">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-body">"I was between jobs and genuinely scared. FlexEarn gave me income when I needed it most. <em>It gave us room to breathe again</em> — and that made everything else feel manageable."</p>
-        <div class="tc-auth">
-          <div class="tc-av av4">DT</div>
-          <div><div class="tc-name">Daniel T., 41</div><div class="tc-role">Marketing exec · Bishan</div></div>
-          <span class="tc-earn">+$2,100/mo</span>
+      <!-- ── Chat 1: Jamie L., Primary School Teacher ── -->
+      <div class="wa-shot rev">
+        <!-- Status bar -->
+        <div class="wa-sbar">
+          <span>9:41</span>
+          <div class="wa-sbar-icons"><span>▲▼</span><span>WiFi</span><span>🔋</span></div>
         </div>
-      </div>
-      <div class="tc rev d1">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-body">"I'm a housewife. Three hours every morning while the kids are at school. <em>Small income, but mine. It changed how I feel about myself.</em>"</p>
-        <div class="tc-auth">
-          <div class="tc-av av3">SN</div>
-          <div><div class="tc-name">Siti N., 35</div><div class="tc-role">Full-time parent · Jurong West</div></div>
-          <span class="tc-earn">+$1,050/mo</span>
+        <!-- Header -->
+        <div class="wa-hdr">
+          <span class="wa-back">‹</span>
+          <div class="wa-av" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">JL</div>
+          <div class="wa-info">
+            <div class="wa-cname">Jamie L.</div>
+            <div class="wa-cstatus">online</div>
+          </div>
+          <div class="wa-hdr-icons"><span>📹</span><span>📞</span><span>⋮</span></div>
         </div>
-      </div>
-      <div class="tc rev d2">
-        <div class="tc-stars">★★★★★</div>
-        <p class="tc-body">"Three years in admin and my salary barely moved. Eight hours a week after office hours. <em>First time in a long time I actually feel like I'm winning.</em>"</p>
-        <div class="tc-auth">
-          <div class="tc-av av2">ML</div>
-          <div><div class="tc-name">Mei Lin</div><div class="tc-role">Admin Executive · Ang Mo Kio</div></div>
-          <span class="tc-earn">+$850/mo</span>
+        <!-- Chat -->
+        <div class="wa-body">
+          <div class="wa-date">Yesterday</div>
+
+          <div class="wa-msg">
+            <div class="wa-s">
+              <div class="wa-txt">Hi, I submitted my info last week. Just checking in 😊</div>
+              <div class="wa-meta"><span class="wa-ts">7:12 PM</span><span class="wa-tick blue">✓✓</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-r">
+              <div class="wa-txt">Hi Jamie! 👋 You've been matched. Task brief coming tonight, check your email!</div>
+              <div class="wa-meta"><span class="wa-ts">7:18 PM</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-s">
+              <div class="wa-txt">OMG really?? Ok ok will check. Thank you!!</div>
+              <div class="wa-meta"><span class="wa-ts">7:19 PM</span><span class="wa-tick blue">✓✓</span></div>
+            </div>
+          </div>
+
+          <div class="wa-date">Today</div>
+
+          <div class="wa-msg">
+            <div class="wa-s">
+              <div class="wa-txt">Just saw $900 PayNow from FlexEarn 😭🙏 First payment lah!! Cannot believe it</div>
+              <div class="wa-meta"><span class="wa-ts">9:03 AM</span><span class="wa-tick blue">✓✓</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-r">
+              <div class="wa-txt">You earned it Jamie! You're one of our top performers this month 🎉</div>
+              <div class="wa-meta"><span class="wa-ts">9:07 AM</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-s no-tail">
+              <div class="wa-txt">I enrolled my son for piano lessons this morning. First time I said yes without hesitating 😭</div>
+              <div class="wa-meta"><span class="wa-ts">9:11 AM</span><span class="wa-tick blue">✓✓</span></div>
+            </div>
+          </div>
+
         </div>
-      </div>
-    </div>
+        <!-- Input bar -->
+        <div class="wa-foot">
+          <span class="wa-emoji-btn">🙂</span>
+          <div class="wa-input-field">Type a message</div>
+          <span class="wa-attach">📎</span>
+          <div class="wa-mic-btn">🎤</div>
+        </div>
+      </div><!-- end wa-shot 1 -->
+
+      <!-- ── Chat 2: Siti N., Housewife ── -->
+      <div class="wa-shot rev d1">
+        <div class="wa-sbar">
+          <span>11:24</span>
+          <div class="wa-sbar-icons"><span>▲▼</span><span>WiFi</span><span>🔋</span></div>
+        </div>
+        <div class="wa-hdr">
+          <span class="wa-back">‹</span>
+          <div class="wa-av" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">SN</div>
+          <div class="wa-info">
+            <div class="wa-cname">Siti N.</div>
+            <div class="wa-cstatus">last seen today at 11:20</div>
+          </div>
+          <div class="wa-hdr-icons"><span>📹</span><span>📞</span><span>⋮</span></div>
+        </div>
+        <div class="wa-body">
+          <div class="wa-date">3 weeks ago</div>
+
+          <div class="wa-msg">
+            <div class="wa-s">
+              <div class="wa-txt">Hi, I'm a housewife. Have 2 kids at home. Can I really do this? Scared waste time lah</div>
+              <div class="wa-meta"><span class="wa-ts">10:14 AM</span><span class="wa-tick blue">✓✓</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-r">
+              <div class="wa-txt">Hi Siti! Many of our members are mums 😊 You pick your own hours. No minimum, no penalty if you need to pause.</div>
+              <div class="wa-meta"><span class="wa-ts">10:21 AM</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-s">
+              <div class="wa-txt">ok lah. will try. not expecting much</div>
+              <div class="wa-meta"><span class="wa-ts">10:23 AM</span><span class="wa-tick blue">✓✓</span></div>
+            </div>
+          </div>
+
+          <div class="wa-date">Today</div>
+
+          <div class="wa-msg">
+            <div class="wa-s">
+              <div class="wa-txt">$1,050 this month??? I only worked 3hrs/day while kids in school 😱😱😱</div>
+              <div class="wa-meta"><span class="wa-ts">11:02 AM</span><span class="wa-tick blue">✓✓</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-r">
+              <div class="wa-txt">Amazing Siti! You've been very consistent. Keep it up 💪</div>
+              <div class="wa-meta"><span class="wa-ts">11:09 AM</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-s no-tail">
+              <div class="wa-txt">Small income but it's MINE. First time I feel like I'm contributing. Thank you really 🙏</div>
+              <div class="wa-meta"><span class="wa-ts">11:24 AM</span><span class="wa-tick grey">✓✓</span></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="wa-foot">
+          <span class="wa-emoji-btn">🙂</span>
+          <div class="wa-input-field">Type a message</div>
+          <span class="wa-attach">📎</span>
+          <div class="wa-mic-btn">🎤</div>
+        </div>
+      </div><!-- end wa-shot 2 -->
+
+      <!-- ── Chat 3: Daniel T., between jobs ── -->
+      <div class="wa-shot rev d2">
+        <div class="wa-sbar">
+          <span>8:55</span>
+          <div class="wa-sbar-icons"><span>▲▼</span><span>4G</span><span>🔋</span></div>
+        </div>
+        <div class="wa-hdr">
+          <span class="wa-back">‹</span>
+          <div class="wa-av" style="background:linear-gradient(135deg,#fa709a,#fee140)">DT</div>
+          <div class="wa-info">
+            <div class="wa-cname">Daniel T.</div>
+            <div class="wa-cstatus">online</div>
+          </div>
+          <div class="wa-hdr-icons"><span>📹</span><span>📞</span><span>⋮</span></div>
+        </div>
+        <div class="wa-body">
+          <div class="wa-date">2 months ago</div>
+
+          <div class="wa-msg">
+            <div class="wa-s">
+              <div class="wa-txt">Bro just lost my job. Saw your ad. This real or not? I've seen a lot of scams lah</div>
+              <div class="wa-meta"><span class="wa-ts">8:02 AM</span><span class="wa-tick blue">✓✓</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-r">
+              <div class="wa-txt">Hi Daniel, totally understand. We're ACRA-registered. UEN: 202127813C — verify yourself on BizFile. No fees to join, ever.</div>
+              <div class="wa-meta"><span class="wa-ts">8:10 AM</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-s">
+              <div class="wa-txt">ok checked. legit. how fast can I start?</div>
+              <div class="wa-meta"><span class="wa-ts">8:14 AM</span><span class="wa-tick blue">✓✓</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-r no-tail">
+              <div class="wa-txt">Submit the form now, we'll review today. If you're approved, you can start tomorrow morning.</div>
+              <div class="wa-meta"><span class="wa-ts">8:16 AM</span></div>
+            </div>
+          </div>
+
+          <div class="wa-date">Last week</div>
+
+          <div class="wa-msg">
+            <div class="wa-s">
+              <div class="wa-txt">$2,100 this month. Not joking. You guys genuinely saved me during a very stressful time 🙏🙏</div>
+              <div class="wa-meta"><span class="wa-ts">8:41 AM</span><span class="wa-tick blue">✓✓</span></div>
+            </div>
+          </div>
+
+          <div class="wa-msg">
+            <div class="wa-r">
+              <div class="wa-txt">So glad we could help Daniel. You worked hard for every dollar 🙏 New job offers coming in?</div>
+              <div class="wa-meta"><span class="wa-ts">8:55 AM</span></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="wa-foot">
+          <span class="wa-emoji-btn">🙂</span>
+          <div class="wa-input-field">Type a message</div>
+          <span class="wa-attach">📎</span>
+          <div class="wa-mic-btn">🎤</div>
+        </div>
+      </div><!-- end wa-shot 3 -->
+
+    </div><!-- end wa-grid -->
+
+    <p style="text-align:center;font-size:0.78rem;color:var(--muted);margin-top:28px">Names changed for privacy. Conversations condensed for display.</p>
 
   </div>
 </section>
