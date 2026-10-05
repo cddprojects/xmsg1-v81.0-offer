@@ -430,7 +430,7 @@
     .wa-info { flex: 1; min-width: 0; }
     .wa-cname { font-size: 15.5px; font-weight: 600; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.01em; }
     .wa-cstatus { font-size: 12px; color: #8B8B8B; margin-top: 1px; }
-    .wa-hdr-icons { display: flex; gap: 16px; align-items: center; color: #111; flex-shrink: 0; }
+    .wa-hdr-icons { display: flex; gap: 18px; align-items: center; color: #111; flex-shrink: 0; padding-right: 2px; }
     .wa-hdr-icons svg { display: block; }
 
     /* Chat wallpaper */
@@ -1120,20 +1120,13 @@
     <symbol id="i-back" viewBox="0 0 11 20">
       <path d="M9.5 1.5L2 10l7.5 8.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
+    <!-- WhatsApp header: video camera (no circle) -->
     <symbol id="i-vid" viewBox="0 0 24 24">
-      <path d="M15 8v8H5V8h10m1-2H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4V7a1 1 0 00-1-1z" fill="currentColor"/>
+      <path d="M15.2 8.4v7.2H5.8V8.4h9.4zm.9-1.6H4.9c-.8 0-1.5.7-1.5 1.5v8.4c0 .8.7 1.5 1.5 1.5h11.2c.8 0 1.5-.7 1.5-1.5v-2.6l3.6 2.7V7.3L17.6 10V8.3c0-.8-.7-1.5-1.5-1.5z" fill="currentColor"/>
     </symbol>
+    <!-- WhatsApp header: phone handset -->
     <symbol id="i-phn" viewBox="0 0 24 24">
-      <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor"/>
-    </symbol>
-    <symbol id="i-vid-o" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M9.2 9.2h5.2c.4 0 .7.3.7.7v4.2c0 .4-.3.7-.7.7H9.2c-.4 0-.7-.3-.7-.7V9.9c0-.4.3-.7.7-.7z" fill="none" stroke="currentColor" stroke-width="1.4"/>
-      <path d="M15.1 11.1l2.6-1.5v4.8l-2.6-1.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="i-phn-o" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M8.4 10.6c1.1 2.2 2.9 4 5.1 5.1l1.6-1.6c.2-.2.5-.3.8-.2.8.3 1.7.4 2.6.4.4 0 .7.3.7.7v2.4c0 .4-.3.7-.7.7C12.7 18.1 7 12.4 7 6.8c0-.4.3-.7.7-.7h2.4c.4 0 .7.3.7.7 0 .9.1 1.8.4 2.6.1.3 0 .6-.2.8L8.4 10.6z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+      <path d="M19.2 17.1v2.4c0 .7-.5 1.2-1.2 1.2C9.3 20.7 3.3 14.7 3.3 6c0-.7.5-1.2 1.2-1.2h2.4c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.7.6 4 .1.4 0 .8-.3 1.1L6.9 12.6c1.6 3 4 5.4 7 7l1.5-1.5c.3-.3.7-.4 1.1-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2z" fill="currentColor"/>
     </symbol>
     <symbol id="i-plus" viewBox="0 0 24 24">
       <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
@@ -1243,8 +1236,8 @@
             <div class="wa-cstatus">last seen today at 16:20</div>
           </div>
           <div class="wa-hdr-icons">
-            <svg width="26" height="26" viewBox="0 0 24 24"><use href="#i-vid-o"/></svg>
-            <svg width="26" height="26" viewBox="0 0 24 24"><use href="#i-phn-o"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
           </div>
         </div>
         <div class="wa-body">
@@ -1380,8 +1373,8 @@
             <div class="wa-cstatus">last seen today at 08:41</div>
           </div>
           <div class="wa-hdr-icons">
-            <svg width="26" height="26" viewBox="0 0 24 24"><use href="#i-vid-o"/></svg>
-            <svg width="26" height="26" viewBox="0 0 24 24"><use href="#i-phn-o"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
           </div>
         </div>
         <div class="wa-body">
