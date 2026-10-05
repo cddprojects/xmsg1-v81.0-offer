@@ -762,8 +762,12 @@
     }
     .mf-txt { margin-bottom: 24px; }
     @media (min-width: 768px) { .mf-txt { margin-bottom: 0; } }
-    .mf-txt h4 { font-family: var(--display); font-size: 1.2rem; color: #fff; margin-bottom: 8px; letter-spacing: -0.01em; }
-    .mf-txt p  { font-size: 0.86rem; color: rgba(255,255,255,0.52); line-height: 1.64; }
+    .mf-txt .stag { margin-bottom: 14px; }
+    .mf-txt h4 { font-family: var(--display); font-size: 1.55rem; color: #fff; margin-bottom: 10px; letter-spacing: -0.02em; line-height: 1.2; }
+    .mf-txt p  { font-size: 0.9rem; color: rgba(255,255,255,0.62); line-height: 1.64; margin-bottom: 18px; }
+    .mf-checks { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .mf-checks li { font-size: 0.84rem; color: rgba(255,255,255,0.78); display: flex; align-items: center; gap: 8px; }
+    .mf-checks li::before { content: '✓'; color: #A8D5B5; font-weight: 700; }
     .mf-form { display: grid; gap: 10px; }
     .mf-form input {
       background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.16);
@@ -774,12 +778,13 @@
     .mf-form input::placeholder { color: rgba(255,255,255,0.3); }
     .mf-form input:focus { border-color: rgba(168,213,181,0.6); background: rgba(255,255,255,0.14); }
     .mf-form button {
-      background: #fff; color: var(--forest);
-      font-weight: 700; font-size: 0.93rem; padding: 14px;
+      background: var(--wa); color: #fff;
+      font-weight: 700; font-size: 0.95rem; padding: 14px;
       border-radius: 8px; border: none; cursor: pointer; font-family: var(--body);
-      min-height: 52px; transition: background 0.2s, transform 0.15s;
+      min-height: 52px; transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
     }
-    .mf-form button:hover { background: var(--cream); transform: translateY(-1px); }
+    .mf-form button:hover { background: var(--wa-d); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.28); }
+    .mf-note { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-align: center; margin-top: 2px; }
 
     /* ════════════════════════════════
        LETTER — letterhead card
@@ -1589,14 +1594,21 @@
     <!-- Mini form -->
     <div class="mini-form-outer rev d3">
       <div class="mf-txt">
-        <h4>Like what you see?</h4>
-        <p>Fill in your details and our team will reach out within 24 hours.</p>
+        <div class="stag inv">Free · 1 minute · No commitment</div>
+        <h4>Want us to WhatsApp you back?</h4>
+        <p>Leave your name and number. We check if you can start, then message you within 24 hours.</p>
+        <ul class="mf-checks">
+          <li>No fee to join</li>
+          <li>You pick your own hours</li>
+          <li>Paid weekly via PayNow</li>
+        </ul>
       </div>
       <form class="mf-form" onsubmit="handleMini(event)">
         <input type="text"  placeholder="Your name"       id="miniName"  required />
         <input type="email" placeholder="Email address"    id="miniEmail" required />
         <input type="tel"   placeholder="WhatsApp (+65)"   id="miniPhone" required />
-        <button type="submit">Get in Touch →</button>
+        <button type="submit">WhatsApp me back →</button>
+        <p class="mf-note">We'll only use this to contact you about FlexEarn.</p>
       </form>
     </div>
 
