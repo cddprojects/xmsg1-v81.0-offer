@@ -574,10 +574,32 @@
     }
     .rev-card .wa-shot:hover { transform: none; box-shadow: 0 8px 22px rgba(0,0,0,0.12); }
     .rev-card .wa-sbar,
+    .rev-card .wa-hdr,
     .rev-card .wa-foot { display: none; }
-    .rev-card .wa-body { min-height: 0; padding: 8px 7px 10px; }
-    .rev-card .wa-hdr { padding: 8px 10px; }
+    .rev-card .wa-body { min-height: 0; padding: 12px 8px 12px; }
     .rev-card .wa-txt { font-size: 13px; }
+
+    /* Different chat wallpapers (default + custom) */
+    .wa-shot.wp-doodle .wa-body { background-color: #EFEAE2; }
+    .wa-shot.wp-teal { background: #C5E8DE; }
+    .wa-shot.wp-teal .wa-body {
+      background-color: #C5E8DE;
+      background-image: radial-gradient(rgba(27,67,50,0.08) 1.2px, transparent 1.2px);
+      background-size: 14px 14px;
+    }
+    .wa-shot.wp-peach { background: #F3D4C4; }
+    .wa-shot.wp-peach .wa-body {
+      background-color: #F3D4C4;
+      background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.18) 0 8px, transparent 8px 16px);
+    }
+    .wa-shot.wp-leaves .wa-body {
+      background-color: #3d4a38;
+      background-image: linear-gradient(rgba(20,28,16,0.28), rgba(20,28,16,0.28)), url("images/wp_leaves.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    .wa-shot.wp-leaves .wa-r { background: rgba(255,255,255,0.94); }
+    .wa-shot.wp-leaves .wa-s { background: #D9FDD3; }
 
     /* WA conversations divider */
     .wa-label {
@@ -1203,23 +1225,14 @@
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
-        <div class="wa-shot">
-          <div class="wa-hdr">
-            <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
-            <div class="wa-av"><img src="images/dp_cat.jpg" alt=""></div>
-            <div class="wa-info">
-              <div class="wa-cname">+65 9124 ••••</div>
-              <div class="wa-cstatus">last seen today at 16:20</div>
-            </div>
-            <div class="wa-hdr-icons">
-              <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
-              <svg width="18" height="18" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
-            </div>
-          </div>
+        <div class="wa-shot wp-doodle">
           <div class="wa-body">
             <div class="wa-msg"><div class="wa-s"><div class="wa-txt">eh sis the paynow come liao<div class="wa-meta"><span class="wa-ts">12:13</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
             <div class="wa-msg"><div class="wa-s no-tail"><div class="wa-txt">$1,280 in 11 days sia 😳<div class="wa-meta"><span class="wa-ts">12:13</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
+            <div class="wa-msg"><div class="wa-s no-tail"><div class="wa-txt">I only do at night after kids sleep hahaha<div class="wa-meta"><span class="wa-ts">12:14</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
             <div class="wa-msg"><div class="wa-r"><div class="wa-txt">yup week 1 in liao! 14 tasks, well done 🎉<div class="wa-meta"><span class="wa-ts">12:16</span></div></div></div></div>
+            <div class="wa-msg"><div class="wa-s"><div class="wa-txt">wait 14 tasks nia already $1.2k??<div class="wa-meta"><span class="wa-ts">12:25</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
+            <div class="wa-msg"><div class="wa-s no-tail"><div class="wa-txt">ok I grind this weekend. thank you ah 🙏<div class="wa-meta"><span class="wa-ts">12:26</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
           </div>
         </div>
       </div>
@@ -1251,22 +1264,11 @@
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
         <div class="wa-shot dark">
-          <div class="wa-hdr">
-            <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
-            <div class="wa-av"><img src="images/dp_dog.jpg" alt=""></div>
-            <div class="wa-info">
-              <div class="wa-cname">+65 8741 ••••</div>
-              <div class="wa-cstatus">online</div>
-            </div>
-            <div class="wa-hdr-icons">
-              <svg width="18" height="18" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
-            </div>
-          </div>
           <div class="wa-body">
             <div class="wa-msg"><div class="wa-s"><div class="wa-txt">hi I looking for part time. what kind of jobs u all have<div class="wa-meta"><span class="wa-ts">17:25</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
             <div class="wa-msg"><div class="wa-r"><div class="wa-txt">hi! got product testing, mystery shopper, some short content tasks. u pick, no quota one<div class="wa-meta"><span class="wa-ts">17:28</span></div></div></div></div>
             <div class="wa-msg"><div class="wa-s"><div class="wa-txt">can do from home or not? I got young kids<div class="wa-meta"><span class="wa-ts">17:31</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
+            <div class="wa-msg"><div class="wa-r"><div class="wa-txt">most can do from home. some mystery shopper need go mall if u want extra<div class="wa-meta"><span class="wa-ts">17:32</span></div></div></div></div>
           </div>
         </div>
       </div>
@@ -1283,23 +1285,10 @@
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
-        <div class="wa-shot">
-          <div class="wa-hdr">
-            <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
-            <div class="wa-av" style="background:#9A3412;color:#fff;font-size:12px;font-weight:700">PS</div>
-            <div class="wa-info">
-              <div class="wa-cname">+65 9012 ••••</div>
-              <div class="wa-cstatus">last seen yesterday</div>
-            </div>
-            <div class="wa-hdr-icons">
-              <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
-              <svg width="18" height="18" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
-            </div>
-          </div>
+        <div class="wa-shot wp-peach">
           <div class="wa-body">
-            <div class="wa-msg"><div class="wa-s"><div class="wa-txt">eh why so slow reply. I ask since yesterday<div class="wa-meta"><span class="wa-ts">11:02</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
+            <div class="wa-msg"><div class="wa-s"><div class="wa-txt">eh why so slow reply<div class="wa-meta"><span class="wa-ts">11:02</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
             <div class="wa-msg"><div class="wa-r"><div class="wa-txt">sorry ah weekend queue a bit long. with you now<div class="wa-meta"><span class="wa-ts">10:18</span></div></div></div></div>
-            <div class="wa-msg"><div class="wa-s"><div class="wa-txt">ok la. next time faster can<div class="wa-meta"><span class="wa-ts">10:20</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
           </div>
         </div>
       </div>
@@ -1330,22 +1319,14 @@
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
-        <div class="wa-shot">
-          <div class="wa-hdr">
-            <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
-            <div class="wa-av"><img src="images/dp_hamster.jpg" alt=""></div>
-            <div class="wa-info">
-              <div class="wa-cname">+65 8376 ••••</div>
-              <div class="wa-cstatus">last seen today at 08:41</div>
-            </div>
-            <div class="wa-hdr-icons">
-              <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
-              <svg width="18" height="18" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
-            </div>
-          </div>
+        <div class="wa-shot wp-leaves">
           <div class="wa-body">
             <div class="wa-msg"><div class="wa-s"><div class="wa-txt">eh this one scam or not. my colleague say all these side income also like that<div class="wa-meta"><span class="wa-ts">08:02</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
             <div class="wa-msg"><div class="wa-r"><div class="wa-txt">haha no la. we acra registered, uen 202127813C, u can check bizfile yourself. we never ask u top up<div class="wa-meta"><span class="wa-ts">08:10</span></div></div></div></div>
+            <div class="wa-msg"><div class="wa-s"><div class="wa-txt">ok I check liao. then why so many people kena scam<div class="wa-meta"><span class="wa-ts">08:14</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
+            <div class="wa-msg"><div class="wa-r"><div class="wa-txt">those one ask u pay first. we don't. u do the task then we pay u<div class="wa-meta"><span class="wa-ts">08:16</span></div></div></div></div>
+            <div class="wa-msg"><div class="wa-s"><div class="wa-txt">hmm ok I try first<div class="wa-meta"><span class="wa-ts">08:22</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
+            <div class="wa-date">Today</div>
             <div class="wa-msg"><div class="wa-s"><div class="wa-txt">ok I take back my words. first week already can earn. my bad 😭<div class="wa-meta"><span class="wa-ts">08:41</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
           </div>
         </div>
