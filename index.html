@@ -320,8 +320,15 @@
     }
 
     /* ════════════════════════════════
-       DREAM — benefit cards
-       2-col on mobile, 2-col on tablet, 4-col on desktop
+       WHY — merged pain + outcome
+    ════════════════════════════════ */
+    .why-sec { background: var(--white); }
+    .why-hdr { margin-bottom: 36px; max-width: 560px; }
+    @media (min-width: 768px) { .why-hdr { margin-bottom: 44px; } }
+
+    /* ════════════════════════════════
+       DREAM cards (used inside why)
+       2-col on mobile, 4-col on desktop
     ════════════════════════════════ */
     .dream-sec { background: var(--off); }
 
@@ -1052,85 +1059,36 @@
   </div>
 </div>
 
-<!-- ══ PAIN — numbered rows ══ -->
-<section class="pain-sec sec" id="why">
+<!-- ══ WHY — pain + outcome in one ══ -->
+<section class="why-sec sec" id="why">
   <div class="c">
-
-    <div class="pain-hdr rev">
-      <div>
-        <div class="stag">Sound Familiar?</div>
-        <h2 class="h2">You're Not Alone<br />in Feeling This.</h2>
-      </div>
-      <p class="sub">Singapore has subsidies for housing, healthcare, and education. But life costs more than the subsidies cover. These aren't personal failings.</p>
+    <div class="why-hdr rev">
+      <div class="stag">Why people start</div>
+      <h2 class="h2">For the gaps your salary doesn't cover.</h2>
+      <p class="sub">Kids' classes, parents, daily bills. Extra income is for those — not for getting rich.</p>
     </div>
-
-    <div class="pain-row rev">
-      <div class="pain-num">1</div>
-      <div class="pain-txt">
-        <h3>Tuition, enrichment classes, swimming, coding camp — and that's just one child.</h3>
-        <p>The school fees are subsidised. The extras aren't. Piano, tuition centre, weekend activities — every term the numbers add up, and every term you wonder how everyone else manages it.</p>
-      </div>
-    </div>
-    <div class="pain-row rev d1">
-      <div class="pain-num">2</div>
-      <div class="pain-txt">
-        <h3>Hawker food used to be Singapore's great equaliser. Not anymore.</h3>
-        <p>$5.50 for chicken rice. $6 for wanton mee. When even the daily kopitiam meal feels expensive, it's not just you noticing — the gap between salary and daily life is real.</p>
-      </div>
-    </div>
-    <div class="pain-row rev d2">
-      <div class="pain-num">3</div>
-      <div class="pain-txt">
-        <h3>Your parents are getting older. Their needs are quietly getting bigger.</h3>
-        <p>Doctor visits, supplements, the little things that make their life more comfortable. MediShield helps. It doesn't cover everything. And you want to be there the way they were there for you.</p>
-      </div>
-    </div>
-    <div class="pain-row rev d3">
-      <div class="pain-num">4</div>
-      <div class="pain-txt">
-        <h3>The HDB came with a 25-year commitment. Everything else still needs to fit around it.</h3>
-        <p>Mortgage. Utilities. Conservancy fees. Groceries. You made it work. But "making it work" shouldn't mean nothing is left for anything else — or anyone else.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══ DREAM — benefit cards, 2-col mobile ══ -->
-<section class="dream-sec sec">
-  <div class="c">
-
-    <div class="dream-hdr rev">
-      <div>
-        <div class="stag gold">What Extra Income Gives You</div>
-        <h2 class="h2">Not Luxury.<br />Just <em>Better Choices.</em></h2>
-      </div>
-      <p class="sub">It was never about getting rich. It's about being able to act on what matters, without the maths getting in the way.</p>
-    </div>
-
     <div class="dream-grid">
       <div class="dream-card rev">
         <div class="dream-icon">🎹</div>
-        <h4>Sign your child up for piano — or swimming, or coding. Without doing the maths first.</h4>
-        <p>They deserve the same chances as everyone else at school. Now you can give it to them.</p>
+        <h4>Kids' classes</h4>
+        <p>Tuition and enrichment every term. Extra income covers it without the monthly maths.</p>
       </div>
       <div class="dream-card c2 rev d1">
         <div class="dream-icon">🍽️</div>
-        <h4>Take your parents for a proper sit-down dinner on their birthday.</h4>
-        <p>Not kopitiam. Somewhere they'd never book for themselves — because now you can.</p>
+        <h4>Parents</h4>
+        <p>Check-ups, supplements, a birthday dinner they'd never book themselves.</p>
       </div>
       <div class="dream-card c3 rev d2">
-        <div class="dream-icon">✈️</div>
-        <h4>Book the family trip to Japan or Korea — and actually go this year.</h4>
-        <p>Not "next year." Flights, hotel, the works. Three years of postponing is enough.</p>
+        <div class="dream-icon">🏠</div>
+        <h4>Daily bills</h4>
+        <p>Hawker prices and the HDB still go up. A second income gives you room.</p>
       </div>
       <div class="dream-card c4 rev d3">
         <div class="dream-icon">💛</div>
-        <h4>Feel like you're actually getting ahead — not just keeping up.</h4>
-        <p>That feeling matters more than people admit.</p>
+        <h4>A bit of space</h4>
+        <p>Not luxury. Just not waiting for payday to say yes.</p>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -1642,31 +1600,6 @@
       </form>
     </div>
 
-  </div>
-</section>
-
-<!-- ══ LETTER ══ -->
-<section class="letter-sec sec">
-  <div class="c">
-    <div class="letter-card rev">
-      <div class="letter-head">
-        <span class="letter-head-logo">Flex<span>Earn</span> SG</span>
-        <span class="letter-head-date">October 2026 · Singapore</span>
-      </div>
-      <div class="letter-body-wrap">
-        <div class="letter-body">
-          <p>We know what it feels like to work a full week, receive your salary — and feel it disappear before you've had a chance to breathe.</p>
-          <p>We know what it's like to look at your account and wonder how you're supposed to keep everyone taken care of: your parents, your children, yourself, all on what you have.</p>
-          <p><em>You're not looking for a miracle. You're looking for a fair chance.</em></p>
-          <p>FlexEarn was built for exactly that. Not to make you rich overnight. That's not honest, and you deserve honesty. But to give you a real, legitimate way to earn more, on your own time, around your existing life, without giving up what matters most.</p>
-          <p><strong>There's nothing wrong with wanting to earn more.</strong> It means you're thinking ahead. And that's exactly who we built this for.</p>
-        </div>
-        <div class="letter-sig">
-          <strong>The FlexEarn SG Team</strong>
-          <span>Registered Singapore company · PDPA Compliant · Since 2021</span>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
