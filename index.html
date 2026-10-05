@@ -533,29 +533,45 @@
     .wa-shot.dark .wa-input-field { background: #2A3942; color: #8696A0; border-color: transparent; }
     .wa-shot.dark .wa-mic-btn { background: #00A884; }
 
-    /* Text review cards */
+    /* Text review cards + WhatsApp proof */
     .rev-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
-      margin-bottom: 36px;
+      gap: 20px;
     }
-    @media (min-width: 640px) { .rev-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (min-width: 960px) { .rev-grid { grid-template-columns: repeat(3,1fr); } }
     .rev-card {
       background: var(--white);
       border-radius: 16px;
-      padding: 20px 18px 18px;
+      padding: 20px 16px 16px;
       box-shadow: 0 2px 14px rgba(0,0,0,0.06);
       border: 1px solid var(--border);
       display: flex; flex-direction: column;
     }
     .rev-stars { color: #F59E0B; font-size: 14px; letter-spacing: 1.5px; margin-bottom: 10px; }
-    .rev-text { font-size: 13.5px; line-height: 1.7; color: var(--ink); flex: 1; }
-    .rev-foot { display: flex; align-items: center; gap: 10px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
-    .rev-av { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0; font-family: var(--body); }
+    .rev-text { font-size: 13.5px; line-height: 1.65; color: var(--ink); }
+    .rev-foot { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .rev-av { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #ddd; }
+    .rev-av img { width: 100%; height: 100%; object-fit: cover; }
     .rev-name { font-weight: 600; font-size: 13px; color: var(--ink); line-height: 1.25; }
     .rev-role { font-size: 11.5px; color: var(--muted); margin-top: 1px; }
     .rev-goog { margin-left: auto; flex-shrink: 0; }
+    .rev-proof {
+      margin-top: 14px;
+      font-size: 11px; font-weight: 600; color: var(--muted);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .rev-card .wa-shot {
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    }
+    .rev-card .wa-shot:hover { transform: none; box-shadow: 0 8px 22px rgba(0,0,0,0.12); }
+    .rev-card .wa-sbar,
+    .rev-card .wa-foot { display: none; }
+    .rev-card .wa-body { min-height: 0; padding: 8px 7px 10px; }
+    .rev-card .wa-hdr { padding: 8px 10px; }
+    .rev-card .wa-txt { font-size: 13px; }
 
     /* WA conversations divider */
     .wa-label {
@@ -1164,271 +1180,162 @@
     <div class="testi-hdr rev">
       <div class="stag">Real Reviews. Real Results.</div>
       <h2 class="h2">What Our Members Say</h2>
-      <p class="sub">Written feedback from members — plus WhatsApp screenshots they sent us. Numbers hidden.</p>
+      <p class="sub">Short reviews from members, with their WhatsApp chat as proof. Numbers hidden.</p>
     </div>
 
-    <!-- ── Text review cards ── -->
     <div class="rev-grid rev">
+
+      <!-- Review 1: PayNow -->
       <div class="rev-card">
         <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"Honestly didn't expect much but kena $750 in my first month doing surveys and mystery shopper tasks. Now I do it on lunch break every day. Very flexible, no boss to answer to!"</p>
+        <p class="rev-text">"Didn't expect much but first week PayNow already $1,280. I only do at night after kids sleep. This one real lah."</p>
         <div class="rev-foot">
-          <div class="rev-av" style="background:#1B4332">GT</div>
+          <div class="rev-av"><img src="images/dp_cat.jpg" alt=""></div>
           <div>
-            <div class="rev-name">Grace T.</div>
-            <div class="rev-role">Accounts Executive, Tampines</div>
+            <div class="rev-name">Jamie L.</div>
+            <div class="rev-role">Primary teacher, Tampines</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-proof">WhatsApp proof</div>
+        <div class="wa-shot">
+          <div class="wa-hdr">
+            <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
+            <div class="wa-av"><img src="images/dp_cat.jpg" alt=""></div>
+            <div class="wa-info">
+              <div class="wa-cname">+65 9124 ••••</div>
+              <div class="wa-cstatus">last seen today at 16:20</div>
+            </div>
+            <div class="wa-hdr-icons">
+              <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
+            </div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-msg">
+              <div class="wa-s">
+                <div class="wa-txt">eh sis the paynow come liao<div class="wa-meta"><span class="wa-ts">12:13</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
+              </div>
+            </div>
+            <div class="wa-msg">
+              <div class="wa-s no-tail">
+                <div class="wa-txt">$1,280 in 11 days sia 😳<div class="wa-meta"><span class="wa-ts">12:13</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
+              </div>
+            </div>
+            <div class="wa-msg">
+              <div class="wa-r">
+                <div class="wa-txt">yup week 1 in liao! 14 tasks, well done 🎉<div class="wa-meta"><span class="wa-ts">12:16</span></div></div>
+              </div>
+            </div>
+            <div class="wa-msg">
+              <div class="wa-s">
+                <div class="wa-txt">ok I grind this weekend. thank you ah 🙏<div class="wa-meta"><span class="wa-ts">12:26</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <!-- Review 2: Job hunt -->
       <div class="rev-card">
         <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"My delivery job not always steady lah. FlexEarn give me extra $500–$800/month on top. Payment always on time, transfer by PayNow. No need wait one month like some other places."</p>
+        <p class="rev-text">"I just asked what jobs they have. They explain clearly, can do from home. I got young kids so this one suit me."</p>
         <div class="rev-foot">
-          <div class="rev-av" style="background:#C2410C">AF</div>
+          <div class="rev-av"><img src="images/dp_dog.jpg" alt=""></div>
           <div>
             <div class="rev-name">Ahmad F.</div>
-            <div class="rev-role">Delivery Rider, Jurong West</div>
+            <div class="rev-role">Delivery rider, Jurong West</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-proof">WhatsApp proof</div>
+        <div class="wa-shot dark">
+          <div class="wa-hdr">
+            <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
+            <div class="wa-av"><img src="images/dp_dog.jpg" alt=""></div>
+            <div class="wa-info">
+              <div class="wa-cname">+65 8741 ••••</div>
+              <div class="wa-cstatus">online</div>
+            </div>
+            <div class="wa-hdr-icons">
+              <svg width="18" height="18" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
+            </div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-msg">
+              <div class="wa-s">
+                <div class="wa-txt">hi I looking for part time. what kind of jobs u all have<div class="wa-meta"><span class="wa-ts">17:25</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
+              </div>
+            </div>
+            <div class="wa-msg">
+              <div class="wa-r">
+                <div class="wa-txt">hi! got product testing, mystery shopper, some short content tasks. u pick, no quota one<div class="wa-meta"><span class="wa-ts">17:28</span></div></div>
+              </div>
+            </div>
+            <div class="wa-msg">
+              <div class="wa-s">
+                <div class="wa-txt">can do from home or not? I got young kids<div class="wa-meta"><span class="wa-ts">17:31</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
+              </div>
+            </div>
+            <div class="wa-msg">
+              <div class="wa-r">
+                <div class="wa-txt">most can do from home. some mystery shopper need go mall if u want extra<div class="wa-meta"><span class="wa-ts">17:32</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <!-- Review 3: Thought scam -->
       <div class="rev-card">
         <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"I refer 3 friends already, all earning now. Very transparent — no hidden charge, no GPS tracking, no recruitment fee. This is the real deal. Priya jio me in and I'm so glad she did 🙏"</p>
+        <p class="rev-text">"Thought it was scam at first, my colleague also say like that. Checked ACRA, no need top up. First week already can earn."</p>
         <div class="rev-foot">
-          <div class="rev-av" style="background:#6D28D9">LW</div>
+          <div class="rev-av"><img src="images/dp_hamster.jpg" alt=""></div>
           <div>
-            <div class="rev-name">Lim W.</div>
-            <div class="rev-role">Part-time admin, Woodlands</div>
+            <div class="rev-name">Daniel T.</div>
+            <div class="rev-role">Between jobs, Woodlands</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-proof">WhatsApp proof</div>
+        <div class="wa-shot">
+          <div class="wa-hdr">
+            <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
+            <div class="wa-av"><img src="images/dp_hamster.jpg" alt=""></div>
+            <div class="wa-info">
+              <div class="wa-cname">+65 8376 ••••</div>
+              <div class="wa-cstatus">last seen today at 08:41</div>
+            </div>
+            <div class="wa-hdr-icons">
+              <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
+            </div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-msg">
+              <div class="wa-s">
+                <div class="wa-txt">eh this one scam or not. my colleague say all these side income also like that<div class="wa-meta"><span class="wa-ts">08:02</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
+              </div>
+            </div>
+            <div class="wa-msg">
+              <div class="wa-r">
+                <div class="wa-txt">haha no la. we acra registered, uen 202127813C, u can check bizfile yourself. we never ask u top up<div class="wa-meta"><span class="wa-ts">08:10</span></div></div>
+              </div>
+            </div>
+            <div class="wa-msg">
+              <div class="wa-s">
+                <div class="wa-txt">ok I take back my words. first week already can earn. my bad 😭<div class="wa-meta"><span class="wa-ts">08:41</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
 
-    <!-- ── WhatsApp conversations divider ── -->
-    <div class="wa-label rev">Uploaded WhatsApp screenshots · numbers hidden</div>
-
-    <div class="wa-grid">
-
-      <!-- ── Chat 1: light mode, aggressive Singlish, talking to CS ── -->
-      <div class="wa-shot rev">
-        <div class="wa-sbar">
-          <div class="wa-sbar-left"><span>Singtel</span><span style="font-size:10px;opacity:.7">LTE</span></div>
-          <span style="font-size:13px;font-weight:700;letter-spacing:0.02em">20:24</span>
-          <div class="wa-sbar-icons">
-            <svg width="17" height="13" viewBox="0 0 17 13"><use href="#i-sig"/></svg>
-            <svg width="16" height="13" viewBox="0 0 16 13"><use href="#i-wfi"/></svg>
-            <span style="font-size:11px;font-weight:600">61%</span>
-            <svg width="27" height="13" viewBox="0 0 27 13"><use href="#i-bat"/></svg>
-          </div>
-        </div>
-        <div class="wa-hdr">
-          <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
-          <div class="wa-av"><img src="images/dp_cat.jpg" alt=""></div>
-          <div class="wa-info">
-            <div class="wa-cname">+65 9124 ••••</div>
-            <div class="wa-cstatus">last seen today at 16:20</div>
-          </div>
-          <div class="wa-hdr-icons">
-            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
-            <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
-          </div>
-        </div>
-        <div class="wa-body">
-          <div class="wa-date">Today</div>
-
-          <div class="wa-msg">
-            <div class="wa-s">
-              <div class="wa-txt">eh sis the paynow come liao<div class="wa-meta"><span class="wa-ts">12:13</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-          <div class="wa-msg">
-            <div class="wa-s no-tail">
-              <div class="wa-txt">$1,280 in 11 days sia 😳 I only do at night after kids sleep<div class="wa-meta"><span class="wa-ts">12:13</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-
-          <div class="wa-msg">
-            <div class="wa-r">
-              <div class="wa-txt">yup week 1 in liao! 14 tasks, well done 🎉<div class="wa-meta"><span class="wa-ts">12:16</span></div></div>
-            </div>
-          </div>
-
-          <div class="wa-msg">
-            <div class="wa-s">
-              <div class="wa-txt">wait 14 tasks nia already $1.2k??<div class="wa-meta"><span class="wa-ts">12:25</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-          <div class="wa-msg">
-            <div class="wa-s no-tail">
-              <div class="wa-txt">ok I grind this weekend. thank you ah 🙏<div class="wa-meta"><span class="wa-ts">12:26</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="wa-foot">
-          <span class="wa-plus"><svg width="24" height="24" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span>
-          <div class="wa-input-field">Message</div>
-          <div class="wa-input-right">
-            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-cam"/></svg>
-            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-mic"/></svg>
-          </div>
-        </div>
-      </div><!-- end wa-shot 1 -->
-
-      <!-- ── Chat 2: dark mode, polite / professional ── -->
-      <div class="wa-shot dark rev d1">
-        <div class="wa-sbar">
-          <div class="wa-sbar-left"><span>20:24</span></div>
-          <div class="wa-sbar-icons">
-            <svg width="17" height="13" viewBox="0 0 17 13"><use href="#i-sig"/></svg>
-            <svg width="16" height="13" viewBox="0 0 16 13"><use href="#i-wfi"/></svg>
-            <svg width="27" height="13" viewBox="0 0 27 13"><use href="#i-bat"/></svg>
-          </div>
-        </div>
-        <div class="wa-hdr">
-          <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
-          <div class="wa-av"><img src="images/dp_dog.jpg" alt=""></div>
-          <div class="wa-info">
-            <div class="wa-cname">+65 8741 ••••</div>
-            <div class="wa-cstatus">online</div>
-          </div>
-          <div class="wa-hdr-icons">
-            <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
-            <svg width="18" height="18" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
-            <svg width="5" height="20" viewBox="0 0 5 22"><use href="#i-more"/></svg>
-          </div>
-        </div>
-        <div class="wa-body">
-          <div class="wa-date">Monday</div>
-
-          <div class="wa-msg">
-            <div class="wa-s">
-              <div class="wa-txt">hi I looking for part time. what kind of jobs u all have<div class="wa-meta"><span class="wa-ts">17:25</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-          <div class="wa-msg">
-            <div class="wa-s no-tail">
-              <div class="wa-txt">can do from home or not? I got young kids<div class="wa-meta"><span class="wa-ts">17:25</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-
-          <div class="wa-msg">
-            <div class="wa-r">
-              <div class="wa-txt">hi! got product testing, mystery shopper, some short content tasks. u pick, no quota one<div class="wa-meta"><span class="wa-ts">17:28</span></div></div>
-            </div>
-          </div>
-
-          <div class="wa-msg">
-            <div class="wa-s">
-              <div class="wa-txt">home one more or must go out ah<div class="wa-meta"><span class="wa-ts">17:31</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-
-          <div class="wa-msg">
-            <div class="wa-r">
-              <div class="wa-txt">most can do from home. some mystery shopper need go mall if u want extra<div class="wa-meta"><span class="wa-ts">17:32</span></div></div>
-            </div>
-          </div>
-
-          <div class="wa-msg">
-            <div class="wa-s">
-              <div class="wa-txt">ok send me the list I see first. if timing ok I start this week<div class="wa-meta"><span class="wa-ts">17:41</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="wa-foot">
-          <span class="wa-emoji-btn"><svg width="24" height="24" viewBox="0 0 24 24"><use href="#i-emoji"/></svg></span>
-          <div class="wa-input-field">Message</div>
-          <div class="wa-input-right">
-            <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-clip"/></svg>
-            <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-cam"/></svg>
-          </div>
-          <div class="wa-mic-btn"><svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-mic"/></svg></div>
-        </div>
-      </div><!-- end wa-shot 2 -->
-
-      <!-- ── Chat 3: light mode, sceptical then converted, CS tone ── -->
-      <div class="wa-shot rev d2">
-        <div class="wa-sbar">
-          <div class="wa-sbar-left"><span>StarHub</span><span style="font-size:10px;opacity:.7">5G</span></div>
-          <span style="font-size:13px;font-weight:700;letter-spacing:0.02em">08:55</span>
-          <div class="wa-sbar-icons">
-            <svg width="17" height="13" viewBox="0 0 17 13"><use href="#i-sig"/></svg>
-            <svg width="16" height="13" viewBox="0 0 16 13"><use href="#i-wfi"/></svg>
-            <span style="font-size:11px;font-weight:600">74%</span>
-            <svg width="27" height="13" viewBox="0 0 27 13"><use href="#i-bat"/></svg>
-          </div>
-        </div>
-        <div class="wa-hdr">
-          <span class="wa-back"><svg width="11" height="20" viewBox="0 0 11 20"><use href="#i-back"/></svg></span>
-          <div class="wa-av"><img src="images/dp_hamster.jpg" alt=""></div>
-          <div class="wa-info">
-            <div class="wa-cname">+65 8376 ••••</div>
-            <div class="wa-cstatus">last seen today at 08:41</div>
-          </div>
-          <div class="wa-hdr-icons">
-            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-vid"/></svg>
-            <svg width="20" height="20" viewBox="0 0 24 24"><use href="#i-phn"/></svg>
-          </div>
-        </div>
-        <div class="wa-body">
-          <div class="wa-date">Yesterday</div>
-
-          <div class="wa-msg">
-            <div class="wa-s">
-              <div class="wa-txt">eh this one scam or not. my colleague say all these side income also like that<div class="wa-meta"><span class="wa-ts">08:02</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-
-          <div class="wa-msg">
-            <div class="wa-r">
-              <div class="wa-txt">haha no la. we acra registered, uen 202127813C, u can check bizfile yourself. we never ask u top up<div class="wa-meta"><span class="wa-ts">08:10</span></div></div>
-            </div>
-          </div>
-
-          <div class="wa-msg">
-            <div class="wa-s">
-              <div class="wa-txt">ok I check liao. then why so many people kena scam<div class="wa-meta"><span class="wa-ts">08:14</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-
-          <div class="wa-msg">
-            <div class="wa-r no-tail">
-              <div class="wa-txt">those one ask u pay first. we don't. u do the task then we pay u<div class="wa-meta"><span class="wa-ts">08:16</span></div></div>
-            </div>
-          </div>
-
-          <div class="wa-msg">
-            <div class="wa-s">
-              <div class="wa-txt">hmm ok I try first. if I lose money I blast u all ah<div class="wa-meta"><span class="wa-ts">08:22</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-
-          <div class="wa-date">Today</div>
-
-          <div class="wa-msg">
-            <div class="wa-s">
-              <div class="wa-txt">ok I take back my words. first week already can earn. my bad 😭<div class="wa-meta"><span class="wa-ts">08:41</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="wa-foot">
-          <span class="wa-plus"><svg width="24" height="24" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span>
-          <div class="wa-input-field">Message</div>
-          <div class="wa-input-right">
-            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-cam"/></svg>
-            <svg width="22" height="22" viewBox="0 0 24 24"><use href="#i-mic"/></svg>
-          </div>
-        </div>
-      </div><!-- end wa-shot 3 -->
-
-    </div><!-- end wa-grid -->
-
-    <p style="text-align:center;font-size:0.78rem;color:var(--muted);margin-top:28px">Screenshots uploaded by members chatting with our team. Numbers hidden for privacy.</p>
+    <p style="text-align:center;font-size:0.78rem;color:var(--muted);margin-top:28px">Reviews + WhatsApp screenshots from members. Numbers hidden for privacy.</p>
 
   </div>
 </section>
