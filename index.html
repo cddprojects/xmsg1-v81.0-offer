@@ -596,23 +596,63 @@
     .income-hdr .h3 { margin-bottom: 6px; font-size: clamp(1.3rem, 2.5vw, 1.9rem); }
     .income-hdr p { font-size: 0.87rem; color: var(--ink2); }
 
-    .tiers { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media (min-width: 640px) { .tiers { grid-template-columns: repeat(3, 1fr); } }
-
-    .tier {
-      background: var(--cream); border: 1px solid var(--border);
-      border-radius: 12px; padding: 24px 20px; text-align: center;
-      position: relative; transition: transform 0.2s, box-shadow 0.2s;
+    /* Tier picker — selectable rows */
+    .tier-picker { display: flex; flex-direction: column; gap: 10px; }
+    .tier-opt { display: block; cursor: pointer; }
+    .tier-opt input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+    .tier-opt-inner {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 20px;
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      background: var(--white);
+      transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+      position: relative;
     }
-    @media (min-width: 640px) { .tier { padding: 28px 18px; } }
-    .tier:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
-    .tier.feat { border-color: var(--gold); background: var(--gold-lt); }
-    .t-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #fff; font-size: 0.58rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
-    .t-role { font-size: 0.65rem; color: var(--muted); margin-bottom: 6px; letter-spacing: 0.07em; text-transform: uppercase; }
-    .t-hrs  { font-size: 0.8rem; color: var(--ink2); margin-bottom: 10px; }
-    .t-amt  { font-family: var(--display); font-size: 2rem; color: var(--gold); line-height: 1; margin-bottom: 2px; letter-spacing: -0.02em; }
-    .t-per  { font-size: 0.68rem; color: var(--muted); }
-    .t-desc { font-size: 0.76rem; color: var(--ink2); margin-top: 12px; line-height: 1.58; }
+    .tier-opt:hover .tier-opt-inner { border-color: #B2CFBD; background: #FAFCFB; }
+    .tier-opt.selected .tier-opt-inner {
+      border-color: var(--forest);
+      background: #F0FAF5;
+      box-shadow: 0 0 0 1px var(--forest);
+    }
+    /* Radio circle */
+    .tier-radio {
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.18s;
+    }
+    .tier-opt.selected .tier-radio { border-color: var(--forest); }
+    .tier-radio-dot {
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--forest);
+      transform: scale(0);
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .tier-opt.selected .tier-radio-dot { transform: scale(1); }
+    /* Tier body */
+    .tier-body { flex: 1; min-width: 0; }
+    .tier-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .tier-label { font-weight: 700; font-size: 15px; color: var(--ink); line-height: 1.2; }
+    .tier-hrs   { font-size: 12.5px; color: var(--ink2); margin-top: 2px; }
+    .tier-earn  { text-align: right; flex-shrink: 0; }
+    .tier-amt   { font-family: var(--display); font-size: 1.55rem; color: var(--forest); line-height: 1; letter-spacing: -0.02em; }
+    .tier-opt.selected .tier-amt { color: var(--forest); }
+    .tier-per   { font-size: 11px; color: var(--muted); }
+    .tier-desc  { font-size: 12.5px; color: var(--ink2); margin-top: 8px; line-height: 1.55; display: none; }
+    .tier-opt.selected .tier-desc { display: block; }
+    /* Popular badge */
+    .tier-pop {
+      position: absolute; top: -1px; right: 18px;
+      background: var(--forest); color: #fff;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 0 0 8px 8px;
+    }
+    /* CTA row below picker */
+    .tier-cta { margin-top: 20px; text-align: center; }
+    .tier-cta-hint { font-size: 13px; color: var(--ink2); margin-bottom: 12px; }
+    .tier-cta-hint strong { color: var(--forest); }
 
     /* Calculator */
     .calc-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px 24px; margin-bottom: 16px; }
@@ -1454,29 +1494,73 @@
         <h3 class="h3">How Much Can You Earn Per Month?</h3>
         <p>Based on hours worked per week. Most members start with around 15 hours.</p>
       </div>
-      <div class="tiers">
-        <div class="tier">
-          <div class="t-role">Side Job</div>
-          <div class="t-hrs">5–10 hrs / week</div>
-          <div class="t-amt">$800</div>
-          <div class="t-per">per month</div>
-          <div class="t-desc">Covers tuition, clears a credit card, or starts your savings fund.</div>
-        </div>
-        <div class="tier feat">
-          <div class="t-badge">Most Members</div>
-          <div class="t-role">Part-Time</div>
-          <div class="t-hrs">15–20 hrs / week</div>
-          <div class="t-amt">$1,800</div>
-          <div class="t-per">per month</div>
-          <div class="t-desc">Changes how the month feels. You say yes more. You stress less.</div>
-        </div>
-        <div class="tier">
-          <div class="t-role">Flex Full</div>
-          <div class="t-hrs">25–30 hrs / week</div>
-          <div class="t-amt">$3,000</div>
-          <div class="t-per">per month</div>
-          <div class="t-desc">A genuine secondary income that reshapes your financial picture.</div>
-        </div>
+      <div class="tier-picker" id="tierPicker">
+
+        <label class="tier-opt" data-tier="side">
+          <input type="radio" name="tier" value="side">
+          <div class="tier-opt-inner">
+            <div class="tier-radio"><div class="tier-radio-dot"></div></div>
+            <div class="tier-body">
+              <div class="tier-top">
+                <div>
+                  <div class="tier-label">Side Earner</div>
+                  <div class="tier-hrs">5–10 hrs / week · evenings or weekends</div>
+                </div>
+                <div class="tier-earn">
+                  <div class="tier-amt">~$800</div>
+                  <div class="tier-per">per month</div>
+                </div>
+              </div>
+              <div class="tier-desc">Perfect if you want to try it out first. Covers school fees, a credit card bill, or starts your emergency fund — without disrupting your main job.</div>
+            </div>
+          </div>
+        </label>
+
+        <label class="tier-opt selected" data-tier="parttime">
+          <input type="radio" name="tier" value="parttime" checked>
+          <div class="tier-opt-inner">
+            <div class="tier-pop">Most Popular</div>
+            <div class="tier-radio"><div class="tier-radio-dot"></div></div>
+            <div class="tier-body">
+              <div class="tier-top">
+                <div>
+                  <div class="tier-label">Part-Time Flex</div>
+                  <div class="tier-hrs">15–20 hrs / week · your own schedule</div>
+                </div>
+                <div class="tier-earn">
+                  <div class="tier-amt">~$1,800</div>
+                  <div class="tier-per">per month</div>
+                </div>
+              </div>
+              <div class="tier-desc">The sweet spot. You say yes to more things — school trips, eating out, saving for a holiday. You stop counting days to payday.</div>
+            </div>
+          </div>
+        </label>
+
+        <label class="tier-opt" data-tier="flexfull">
+          <input type="radio" name="tier" value="flexfull">
+          <div class="tier-opt-inner">
+            <div class="tier-radio"><div class="tier-radio-dot"></div></div>
+            <div class="tier-body">
+              <div class="tier-top">
+                <div>
+                  <div class="tier-label">Flex Full</div>
+                  <div class="tier-hrs">25–30 hrs / week · treat it like a real job</div>
+                </div>
+                <div class="tier-earn">
+                  <div class="tier-amt">~$3,000</div>
+                  <div class="tier-per">per month</div>
+                </div>
+              </div>
+              <div class="tier-desc">A genuine second income. Members at this level pay off car loans, save for a flat downpayment, or fund their children's enrichment without stress.</div>
+            </div>
+          </div>
+        </label>
+
+      </div>
+      <div class="tier-cta">
+        <p class="tier-cta-hint">Sounds right for you? <strong>Apply in under 3 minutes.</strong></p>
+        <a href="#apply" class="btn btn-primary">Check Your Eligibility →</a>
       </div>
     </div>
 
@@ -1687,6 +1771,15 @@
   document.getElementById('hoursSlider').addEventListener('input', updateCalc);
   document.getElementById('rateSlider').addEventListener('input', updateCalc);
   updateCalc();
+
+  /* ── Tier picker ── */
+  document.querySelectorAll('#tierPicker .tier-opt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      document.querySelectorAll('#tierPicker .tier-opt').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      opt.querySelector('input[type="radio"]').checked = true;
+    });
+  });
 
   /* ── Forms ── */
   function buildMsg(n, e, p) {
