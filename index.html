@@ -565,6 +565,10 @@
     }
     .rev-card.rev-more { display: none; }
     .rev-grid.is-open .rev-card.rev-more { display: flex; }
+    @media (max-width: 767px) {
+      .rev-card:nth-child(n+5) { display: none; }
+      .rev-grid.is-open .rev-card:nth-child(n+5) { display: flex; }
+    }
     .rev-head {
       display: flex; align-items: center; gap: 10px;
       margin-bottom: 8px;
