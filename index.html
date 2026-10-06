@@ -961,6 +961,10 @@
         gap: 32px;
       }
     }
+    /* Leave a tight slot for the 56px WA chip until the page is wide enough */
+    @media (min-width: 768px) and (max-width: 1219px) {
+      .ft-bot { padding-right: 64px; }
+    }
     .ft-bot p {
       font-size: 0.72rem; font-weight: 400; font-style: normal;
       color: rgba(255,255,255,0.38); line-height: 1.6;
