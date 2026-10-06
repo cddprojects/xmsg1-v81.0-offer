@@ -787,32 +787,76 @@
     .mf-note { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-align: center; margin-top: 2px; }
 
     /* ════════════════════════════════
-       LETTER — letterhead card
+       ABOUT / NOTE — photo + proof points
     ════════════════════════════════ */
     .letter-sec { background: var(--off); }
-    .letter-card {
-      max-width: 700px; margin-inline: auto;
-      background: var(--white); border-radius: 16px;
-      box-shadow: 0 6px 40px rgba(0,0,0,0.08);
+    .about-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: var(--white);
+      border-radius: 18px;
       overflow: hidden;
+      box-shadow: 0 6px 40px rgba(0,0,0,0.08);
+      max-width: 1080px;
+      margin-inline: auto;
     }
-    .letter-head {
-      background: var(--forest); padding: 22px 28px;
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    @media (min-width: 860px) {
+      .about-card { grid-template-columns: 0.92fr 1.08fr; }
     }
-    @media (min-width: 640px) { .letter-head { padding: 26px 44px; } }
-    .letter-head-logo { font-family: var(--display); font-size: 1.1rem; color: #fff; letter-spacing: -0.02em; }
-    .letter-head-logo span { color: #A8D5B5; }
-    .letter-head-date { font-size: 0.73rem; color: rgba(255,255,255,0.38); }
-    .letter-body-wrap { padding: 32px 28px; border-left: 4px solid var(--forest-lt); }
-    @media (min-width: 640px) { .letter-body-wrap { padding: 44px 44px 44px 40px; } }
-    .letter-body p { font-size: 0.97rem; color: var(--ink2); line-height: 1.88; margin-bottom: 18px; }
-    .letter-body p:last-of-type { margin-bottom: 0; }
-    .letter-body em     { color: var(--ink); font-style: italic; }
-    .letter-body strong { color: var(--forest); font-weight: 600; }
-    .letter-sig { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--border); }
-    .letter-sig strong { display: block; font-size: 0.9rem; color: var(--ink); font-weight: 600; margin-bottom: 3px; }
-    .letter-sig span { font-size: 0.78rem; color: var(--muted); }
+    .about-photo {
+      position: relative;
+      min-height: 220px;
+      background: var(--forest);
+    }
+    @media (min-width: 860px) { .about-photo { min-height: 100%; } }
+    .about-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 40%;
+      display: block;
+      min-height: 220px;
+    }
+    @media (min-width: 860px) {
+      .about-photo img { position: absolute; inset: 0; min-height: 0; }
+    }
+    .about-photo-cap {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 18px 20px;
+      background: linear-gradient(transparent, rgba(19,50,39,0.82));
+      color: #fff;
+      font-family: var(--display);
+      font-size: 1.02rem;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+    .about-copy { padding: 32px 24px 28px; }
+    @media (min-width: 640px) { .about-copy { padding: 40px 40px 36px; } }
+    .about-copy .stag { margin-bottom: 14px; }
+    .about-copy p {
+      font-size: 0.95rem; color: var(--ink2); line-height: 1.78; margin-bottom: 14px;
+    }
+    .about-copy p:last-of-type { margin-bottom: 0; }
+    .about-copy em { color: var(--ink); font-style: italic; }
+    .about-copy strong { color: var(--forest); font-weight: 600; }
+    .about-points {
+      list-style: none;
+      margin: 22px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+    .about-points li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.86rem; color: var(--ink); line-height: 1.45; font-weight: 500;
+    }
+    .about-ck {
+      flex-shrink: 0;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--forest-lt); color: var(--forest);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 700; margin-top: 1px;
+    }
+    .about-sig { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border); }
+    .about-sig strong { display: block; font-size: 0.88rem; color: var(--ink); font-weight: 600; margin-bottom: 3px; }
+    .about-sig span { font-size: 0.76rem; color: var(--muted); font-weight: 400; }
 
     /* ════════════════════════════════
        FAQ
@@ -1616,23 +1660,28 @@
   </div>
 </section>
 
-<!-- ══ LETTER ══ -->
+<!-- ══ ABOUT / NOTE ══ -->
 <section class="letter-sec sec">
   <div class="c">
-    <div class="letter-card rev">
-      <div class="letter-head">
-        <div class="letter-head-logo">Flex<span>Earn</span> SG</div>
-        <div class="letter-head-date">A Note From Us</div>
+    <div class="about-card rev">
+      <div class="about-photo">
+        <img src="images/sg_unsplash.jpg" alt="Marina Bay, Singapore">
+        <div class="about-photo-cap">Registered in Singapore.<br />Paid every Friday.</div>
       </div>
-      <div class="letter-body-wrap">
-        <div class="letter-body">
-          <p>We know what it feels like to work a full week, get paid — and watch it disappear before you've had a chance to breathe.</p>
-          <p>You're not looking for a miracle. You're looking for a <em>fair chance</em>.</p>
-          <p><strong>FlexEarn was built for that.</strong> Not to make you rich overnight. To give you a legitimate way to earn more, on your own time, around your existing life.</p>
-        </div>
-        <div class="letter-sig">
+      <div class="about-copy">
+        <div class="stag">A Note From Us</div>
+        <p>We know what it feels like to work a full week, get paid — and watch it disappear before you've had a chance to breathe.</p>
+        <p>You're not looking for a miracle. You're looking for a <em>fair chance</em>.</p>
+        <p><strong>FlexEarn was built for that.</strong> Not to make you rich overnight. To give you a legitimate way to earn more, on your own time, around your existing life.</p>
+        <ul class="about-points">
+          <li><span class="about-ck">✓</span> ACRA-registered Singapore company</li>
+          <li><span class="about-ck">✓</span> PDPA compliant · operating since 2021</li>
+          <li><span class="about-ck">✓</span> $2.1M paid out to 8,400+ members</li>
+          <li><span class="about-ck">✓</span> Weekly PayNow · no fee to join</li>
+        </ul>
+        <div class="about-sig">
           <strong>The FlexEarn SG Team</strong>
-          <span>Registered Singapore company · PDPA Compliant · Since 2021</span>
+          <span>Check our UEN on ACRA BizFile · hello@flexearnsg.com</span>
         </div>
       </div>
     </div>
