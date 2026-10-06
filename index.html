@@ -938,21 +938,21 @@
     .f-note { font-size: 0.7rem; color: var(--muted); margin-top: 12px; text-align: center; }
 
     /* ════════════════════════════════
-       FOOTER — forest green
+       FOOTER — WhatsApp button fill green
     ════════════════════════════════ */
-    footer { background: var(--forest); padding-block: 48px 28px; }
+    footer { background: var(--wa); padding-block: 48px 28px; }
     @media (min-width: 768px) { footer { padding-block: 56px 32px; } }
     .ft-grid { display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 40px; }
     @media (min-width: 640px) { .ft-grid { grid-template-columns: 2fr 1fr 1fr; gap: 52px; } }
-    .ft-logo { font-family: var(--display); font-size: 1.15rem; color: #fff; letter-spacing: -0.02em; display: block; margin-bottom: 10px; }
-    .ft-logo span { color: #A8D5B5; }
-    .ft-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.34); line-height: 1.72; max-width: 240px; }
-    .ft-col h5 { font-size: 0.65rem; font-weight: 600; color: rgba(255,255,255,0.28); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
+    .ft-logo { font-family: var(--display); font-size: 1.15rem; color: var(--forest-d); letter-spacing: -0.02em; display: block; margin-bottom: 10px; }
+    .ft-logo span { color: var(--forest); }
+    .ft-brand p { font-size: 0.82rem; color: rgba(19,50,39,0.72); line-height: 1.72; max-width: 240px; }
+    .ft-col h5 { font-size: 0.65rem; font-weight: 600; color: rgba(19,50,39,0.5); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
     .ft-col ul { list-style: none; }
     .ft-col li { margin-bottom: 9px; }
-    .ft-col a { font-size: 0.84rem; font-weight: 400; font-style: normal; color: rgba(255,255,255,0.48); transition: color 0.2s; }
-    .ft-col a:hover { color: #fff; }
-    .ft-bot { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 22px; display: flex; flex-direction: column; gap: 12px; }
+    .ft-col a { font-size: 0.84rem; font-weight: 400; font-style: normal; color: var(--forest-d); transition: color 0.2s; }
+    .ft-col a:hover { color: #052e16; }
+    .ft-bot { border-top: 1px solid rgba(19,50,39,0.16); padding-top: 22px; display: flex; flex-direction: column; gap: 12px; }
     @media (min-width: 640px) {
       .ft-bot {
         flex-direction: row;
@@ -964,34 +964,34 @@
     }
     .ft-bot p {
       font-size: 0.72rem; font-weight: 400; font-style: normal;
-      color: rgba(255,255,255,0.38); line-height: 1.6;
+      color: rgba(19,50,39,0.65); line-height: 1.6;
     }
     @media (min-width: 640px) { .ft-bot p { max-width: 70%; margin: 0; } }
     .ft-bot a {
       font-size: 0.72rem; font-weight: 400; font-style: normal;
-      color: rgba(255,255,255,0.38); line-height: 1.6;
+      color: rgba(19,50,39,0.65); line-height: 1.6;
       white-space: nowrap; flex-shrink: 0;
       text-align: right;
       margin-left: auto;
       padding-top: 0;
       transition: color 0.2s;
     }
-    .ft-bot a:hover { color: #fff; }
+    .ft-bot a:hover { color: var(--forest-d); }
 
     /* ════════════════════════════════
        WA FLOAT (desktop only)
     ════════════════════════════════ */
     .wa-float {
       position: fixed; bottom: 24px; right: 20px; z-index: 400;
-      background: var(--wa); color: #fff;
+      background: #fff; color: var(--wa-d);
       font-weight: 700; font-size: 0.8rem;
       padding: 13px 20px; border-radius: 9px;
       display: none; align-items: center; gap: 8px;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.16);
       transition: transform 0.2s, box-shadow 0.2s;
     }
     @media (min-width: 768px) { .wa-float { display: flex; } }
-    .wa-float:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(37,211,102,0.38); }
+    .wa-float:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
     .wa-float svg { width: 18px; height: 18px; flex-shrink: 0; }
 
     /* ════════════════════════════════
