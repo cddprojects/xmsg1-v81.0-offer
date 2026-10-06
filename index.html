@@ -555,7 +555,7 @@
     .rev-card {
       background: var(--white);
       border-radius: 16px;
-      padding: 18px 16px 16px;
+      padding: 16px 16px 14px;
       box-shadow: 0 2px 14px rgba(0,0,0,0.06);
       border: 1px solid var(--border);
       display: flex; flex-direction: column;
@@ -565,15 +565,24 @@
     }
     .rev-card.rev-more { display: none; }
     .rev-grid.is-open .rev-card.rev-more { display: flex; }
-    .rev-stars { color: #F59E0B; font-size: 13px; letter-spacing: 1.5px; margin-bottom: 10px; }
-    .rev-stars .off { color: #E5E7EB; }
-    .rev-text { font-size: 13.5px; line-height: 1.65; color: var(--ink); }
-    .rev-foot { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
-    .rev-av { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #ddd; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; font-family: var(--body); }
+    .rev-head {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 8px;
+    }
+    .rev-av { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #ddd; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; font-family: var(--body); }
     .rev-av img { width: 100%; height: 100%; object-fit: cover; }
-    .rev-name { font-weight: 600; font-size: 13px; color: var(--ink); line-height: 1.25; }
-    .rev-role { font-size: 11.5px; color: var(--muted); margin-top: 1px; }
+    .rev-who { flex: 1; min-width: 0; }
+    .rev-name { font-weight: 600; font-size: 14px; color: var(--ink); line-height: 1.25; }
+    .rev-role { font-size: 12px; color: var(--muted); margin-top: 1px; }
     .rev-goog { margin-left: auto; flex-shrink: 0; }
+    .rev-meta {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 8px;
+    }
+    .rev-stars { color: #F59E0B; font-size: 13px; letter-spacing: 1.5px; line-height: 1; }
+    .rev-stars .off { color: #E5E7EB; }
+    .rev-when { font-size: 12px; color: var(--muted); font-weight: 400; }
+    .rev-text { font-size: 13.5px; line-height: 1.65; color: var(--ink); }
     .rev-more-wrap { text-align: center; margin-top: 32px; }
     .rev-grid.is-open + .rev-more-wrap #revMoreBtn { display: none; }
     .rev-grid:not(.is-open) + .rev-more-wrap #revLessBtn { display: none; }
@@ -1395,16 +1404,19 @@
 
       <!-- 1 visible · PayNow + WA -->
       <div class="rev-card">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"Didn't expect much but first week PayNow already $1,280. I only do at night after kids sleep. This one real lah."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av"><img src="images/dp_cat.jpg" alt=""></div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Jamie L.</div>
             <div class="rev-role">Primary teacher, Tampines</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-when">2 weeks ago</span>
+        </div>
+        <p class="rev-text">"Didn't expect much but first week PayNow already $1,280. I only do at night after kids sleep. This one real lah."</p>
         <div class="wa-shot wp-doodle">
           <div class="wa-body">
             <div class="wa-msg"><div class="wa-s"><div class="wa-txt">eh sis the paynow come liao<div class="wa-meta"><span class="wa-ts">12:13</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
@@ -1419,30 +1431,36 @@
 
       <!-- 2 visible · short -->
       <div class="rev-card">
-        <div class="rev-stars">★★★★<span class="off">★</span></div>
-        <p class="rev-text">"Pay on time. That's it."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av" style="background:#374151">KW</div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Ken W.</div>
             <div class="rev-role">Warehouse, Bedok</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★★<span class="off">★</span></div>
+          <span class="rev-when">1 month ago</span>
+        </div>
+        <p class="rev-text">"Pay on time. That's it."</p>
       </div>
 
       <!-- 3 visible · job hunt + WA -->
       <div class="rev-card">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"I just asked what jobs they have. They explain clearly, can do from home. I got young kids so this one suit me."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av"><img src="images/dp_dog.jpg" alt=""></div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Ahmad F.</div>
             <div class="rev-role">Delivery rider, Jurong West</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-when">3 weeks ago</span>
+        </div>
+        <p class="rev-text">"I just asked what jobs they have. They explain clearly, can do from home. I got young kids so this one suit me."</p>
         <div class="wa-shot dark">
           <div class="wa-body">
             <div class="wa-msg"><div class="wa-s"><div class="wa-txt">hi I looking for part time. what kind of jobs u all have<div class="wa-meta"><span class="wa-ts">17:25</span><svg class="wa-tick blue" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
@@ -1455,16 +1473,19 @@
 
       <!-- 4 visible · 吐槽 CS slow + WA -->
       <div class="rev-card">
-        <div class="rev-stars">★★★<span class="off">★★</span></div>
-        <p class="rev-text">"Tasks ok but CS weekend reply damn slow. I wait almost 1 day then only reply. Can improve lah."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av" style="background:#9A3412">PS</div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Priya S.</div>
             <div class="rev-role">Admin, Sengkang</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★<span class="off">★★</span></div>
+          <span class="rev-when">1 month ago</span>
+        </div>
+        <p class="rev-text">"Tasks ok but CS weekend reply damn slow. I wait almost 1 day then only reply. Can improve lah."</p>
         <div class="wa-shot wp-peach">
           <div class="wa-body">
             <div class="wa-msg"><div class="wa-s"><div class="wa-txt">eh why so slow reply<div class="wa-meta"><span class="wa-ts">11:02</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
@@ -1475,30 +1496,36 @@
 
       <!-- 5 visible · long sincere -->
       <div class="rev-card">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"I write this properly because I want people to know. Husband income one check only, two kids, school fees every year go up. I stay home so I thought I cannot help. Started with 2 hours when they nap. First month not a lot, maybe $400. Now I know the tasks already, around $900. Not rich. But I paid for my daughter's swimming myself this term. First time I didn't ask him. That's why I stay."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av" style="background:#1B4332">SN</div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Siti N.</div>
             <div class="rev-role">Stay-at-home mum, Punggol</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-when">4 months ago</span>
+        </div>
+        <p class="rev-text">"I write this properly because I want people to know. Husband income one check only, two kids, school fees every year go up. I stay home so I thought I cannot help. Started with 2 hours when they nap. First month not a lot, maybe $400. Now I know the tasks already, around $900. Not rich. But I paid for my daughter's swimming myself this term. First time I didn't ask him. That's why I stay."</p>
       </div>
 
       <!-- 6 visible · scam + WA -->
       <div class="rev-card">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"Thought it was scam at first, my colleague also say like that. Checked ACRA, no need top up. First week already can earn."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av"><img src="images/dp_hamster.jpg" alt=""></div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Daniel T.</div>
             <div class="rev-role">Between jobs, Woodlands</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-when">2 months ago</span>
+        </div>
+        <p class="rev-text">"Thought it was scam at first, my colleague also say like that. Checked ACRA, no need top up. First week already can earn."</p>
         <div class="wa-shot wp-leaves">
           <div class="wa-body">
             <div class="wa-msg"><div class="wa-s"><div class="wa-txt">eh this one scam or not. my colleague say all these side income also like that<div class="wa-meta"><span class="wa-ts">08:02</span><svg class="wa-tick grey" viewBox="0 0 16 11" aria-hidden="true"><use href="#i-ticks"/></svg></div></div></div></div>
@@ -1514,128 +1541,155 @@
 
       <!-- 7 visible · short -->
       <div class="rev-card">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"Ok can. I do lunch time."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av"><img src="images/dp_food.jpg" alt=""></div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Marcus C.</div>
             <div class="rev-role">Student, Yishun</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-when">3 days ago</span>
+        </div>
+        <p class="rev-text">"Ok can. I do lunch time."</p>
       </div>
 
       <!-- 8 visible · 吐槽 ads -->
       <div class="rev-card">
-        <div class="rev-stars">★★★★<span class="off">★</span></div>
-        <p class="rev-text">"The $3,000 thing a bit extra lah. Unless you really grind every day. I do 10 hrs a week, around $700–$800. Still ok, just don't expect overnight rich."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av" style="background:#6D28D9">GT</div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Grace T.</div>
             <div class="rev-role">Accounts, Clementi</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★★<span class="off">★</span></div>
+          <span class="rev-when">5 months ago</span>
+        </div>
+        <p class="rev-text">"The $3,000 thing a bit extra lah. Unless you really grind every day. I do 10 hrs a week, around $700–$800. Still ok, just don't expect overnight rich."</p>
       </div>
 
       <!-- 9 more · long mixed -->
       <div class="rev-card rev-more">
-        <div class="rev-stars">★★★★<span class="off">★</span></div>
-        <p class="rev-text">"First week quite blur. Briefing long, I almost quit. After I finish 3 tasks then I understand the flow. Now it's just open phone, do, close. Wish they make week 1 simpler. After that no issue."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av" style="background:#0F766E">WM</div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Wei Ming</div>
             <div class="rev-role">Private hire, Ang Mo Kio</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★★<span class="off">★</span></div>
+          <span class="rev-when">6 months ago</span>
+        </div>
+        <p class="rev-text">"First week quite blur. Briefing long, I almost quit. After I finish 3 tasks then I understand the flow. Now it's just open phone, do, close. Wish they make week 1 simpler. After that no issue."</p>
       </div>
 
       <!-- 10 more · short 吐槽 -->
       <div class="rev-card rev-more">
-        <div class="rev-stars">★★<span class="off">★★★</span></div>
-        <p class="rev-text">"Too many WhatsApp messages. I mute first. Tasks ok but the group chat noisy."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av" style="background:#BE185D">RO</div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Rachel O.</div>
             <div class="rev-role">Marketing, Novena</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★<span class="off">★★★</span></div>
+          <span class="rev-when">2 months ago</span>
+        </div>
+        <p class="rev-text">"Too many WhatsApp messages. I mute first. Tasks ok but the group chat noisy."</p>
       </div>
 
       <!-- 11 more · sincere -->
       <div class="rev-card rev-more">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"Lost my job in March. This one hold me until I find next one. Not glamorous. Just enough to not touch my CPF. Thank you."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av" style="background:#166534">HR</div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Hafiz R.</div>
             <div class="rev-role">Between jobs, Jurong East</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-when">3 months ago</span>
+        </div>
+        <p class="rev-text">"Lost my job in March. This one hold me until I find next one. Not glamorous. Just enough to not touch my CPF. Thank you."</p>
       </div>
 
       <!-- 12 more · 吐槽 dry weeks -->
       <div class="rev-card rev-more">
-        <div class="rev-stars">★★★<span class="off">★★</span></div>
-        <p class="rev-text">"Some weeks no tasks. I wait wait then suddenly 5 come in one day. Income not stable. If you need every month same amount, maybe not for you."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av" style="background:#B45309">LK</div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Linda K.</div>
             <div class="rev-role">Part-time, Toa Payoh</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★<span class="off">★★</span></div>
+          <span class="rev-when">1 month ago</span>
+        </div>
+        <p class="rev-text">"Some weeks no tasks. I wait wait then suddenly 5 come in one day. Income not stable. If you need every month same amount, maybe not for you."</p>
       </div>
 
       <!-- 13 more · short good -->
       <div class="rev-card rev-more">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"Refer my sister already. She also doing."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av" style="background:#1E40AF">JH</div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Jun Hao</div>
             <div class="rev-role">Part-time, Pasir Ris</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-when">2 weeks ago</span>
+        </div>
+        <p class="rev-text">"Refer my sister already. She also doing."</p>
       </div>
 
       <!-- 14 more · long sincere nurse -->
       <div class="rev-card rev-more">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"I work night shift. Days I cannot sleep sometimes so I do a few tasks. Nobody at work knows. I use it for my mum's supplements. Not going to write a long essay. It works, they pay, I continue."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av"><img src="images/dp_nurul.jpg" alt=""></div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Nurul A.</div>
             <div class="rev-role">Nurse, Bedok</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-when">4 months ago</span>
+        </div>
+        <p class="rev-text">"I work night shift. Days I cannot sleep sometimes so I do a few tasks. Nobody at work knows. I use it for my mum's supplements. Not going to write a long essay. It works, they pay, I continue."</p>
       </div>
 
       <!-- 15 more · short 吐槽 -->
       <div class="rev-card rev-more">
-        <div class="rev-stars">★★★<span class="off">★★</span></div>
-        <p class="rev-text">"Reply after 1 day. Can improve. The work itself no problem."</p>
-        <div class="rev-foot">
+        <div class="rev-head">
           <div class="rev-av" style="background:#44403C">BT</div>
-          <div>
+          <div class="rev-who">
             <div class="rev-name">Ben T.</div>
             <div class="rev-role">Sales, Paya Lebar</div>
           </div>
           <div class="rev-goog"><svg width="18" height="18"><use href="#i-google"/></svg></div>
         </div>
+        <div class="rev-meta">
+          <div class="rev-stars">★★★<span class="off">★★</span></div>
+          <span class="rev-when">3 weeks ago</span>
+        </div>
+        <p class="rev-text">"Reply after 1 day. Can improve. The work itself no problem."</p>
       </div>
 
     </div>
