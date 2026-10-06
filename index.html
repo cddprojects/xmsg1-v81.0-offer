@@ -943,9 +943,9 @@
     @media (min-width: 640px) {
       .ft-bot {
         flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 56px;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 32px;
         padding-right: 180px;
       }
     }
@@ -953,11 +953,14 @@
       font-size: 0.72rem; font-weight: 400; font-style: normal;
       color: rgba(255,255,255,0.38); line-height: 1.6;
     }
-    @media (min-width: 640px) { .ft-bot p { margin-right: auto; max-width: 58%; } }
+    @media (min-width: 640px) { .ft-bot p { max-width: 70%; margin: 0; } }
     .ft-bot a {
       font-size: 0.72rem; font-weight: 400; font-style: normal;
       color: rgba(255,255,255,0.38); line-height: 1.6;
       white-space: nowrap; flex-shrink: 0;
+      text-align: right;
+      margin-left: auto;
+      padding-top: 0;
       transition: color 0.2s;
     }
     .ft-bot a:hover { color: #fff; }
