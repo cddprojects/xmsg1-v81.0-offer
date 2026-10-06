@@ -803,11 +803,13 @@
       position: relative;
       min-height: 280px;
       background: var(--forest-d);
+      border-radius: 18px;
+      overflow: hidden;
     }
     @media (min-width: 860px) { .about-photo { min-height: 100%; } }
     .about-photo img {
       width: 100%; height: 100%;
-      object-fit: cover; object-position: center 30%;
+      object-fit: cover; object-position: center center;
       display: block;
       min-height: 280px;
     }
@@ -1655,7 +1657,7 @@
   <div class="c">
     <div class="about-split rev">
       <div class="about-photo">
-        <img src="images/work_enjoy.jpg" alt="People working together, on their own time">
+        <img src="images/work_enjoy.jpg" alt="Singaporeans working from a cafe, on their own time">
       </div>
       <div class="about-copy">
         <div class="stag">A Note From Us</div>
