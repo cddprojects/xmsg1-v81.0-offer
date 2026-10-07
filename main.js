@@ -132,7 +132,7 @@
   /* ── Smooth scroll, kept clear of the sticky header ── */
   function stickyOffset() {
     const nav = document.querySelector('nav');
-    return (nav ? nav.offsetHeight : 0) + 16;
+    return (nav ? nav.offsetHeight : 0) + 56;
   }
   function clearStickyHeader() {
     const offset = `${stickyOffset()}px`;
