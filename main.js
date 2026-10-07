@@ -130,14 +130,22 @@
   }
 
   /* ── Smooth scroll, kept clear of the sticky header ── */
-  function stickyOffset() {
+  function restingTop(el) {
+    const y = el.getBoundingClientRect().top + window.scrollY;
+    const transform = getComputedStyle(el).transform;
+    if (!transform || transform === 'none') return y;
+    return y - (new DOMMatrix(transform).m42 || 0);
+  }
+  function stickyOffset(el) {
     const nav = document.querySelector('nav');
-    return (nav ? nav.offsetHeight : 0) + 56;
+    const navH = nav ? nav.offsetHeight : 0;
+    /* Desktop: keep the form snug under the nav so the calculator above it stays off-screen. */
+    const extra = el && el.id === 'apply' && window.innerWidth >= 900 ? 12 : 56;
+    return navH + extra;
   }
   function clearStickyHeader() {
-    const offset = `${stickyOffset()}px`;
     document.querySelectorAll('#apply, #why, #how-it-works').forEach((el) => {
-      el.style.scrollMarginTop = offset;
+      el.style.scrollMarginTop = `${stickyOffset(el)}px`;
     });
   }
   clearStickyHeader();
@@ -150,7 +158,7 @@
       if (!t) return;
       e.preventDefault();
       clearStickyHeader();
-      const top = t.getBoundingClientRect().top + window.scrollY - stickyOffset();
+      const top = restingTop(t) - stickyOffset(t);
       window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
     });
   });
