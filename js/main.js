@@ -45,6 +45,67 @@
     });
   });
 
+  /* ── Embedded form height follows the form content ── */
+  function fitFormFrame(iframe, height) {
+    iframe.style.height = `${Math.ceil(height) + 5}px`;
+  }
+  window.addEventListener('message', (event) => {
+    const fromForm = event.origin === 'https://chatfromforms.com';
+    const fromLocalRelay = event.origin === window.location.origin;
+    if (!fromForm && !fromLocalRelay) return;
+    const message = event.data;
+    if (!message || typeof message !== 'object' || message.type !== 'setIFrameHeight' || !message.data) return;
+    const height = Number(message.data.height);
+    if (!Number.isFinite(height) || height <= 0) return;
+    document.querySelectorAll('[data-cddform] iframe').forEach((iframe) => {
+      if (iframe.contentWindow === event.source || (iframe._heightMirror && iframe._heightMirror.contentWindow === event.source)) {
+        fitFormFrame(iframe, height);
+      }
+    });
+  });
+  const mirroredFrames = new WeakSet();
+  let formRelayPromise = null;
+  function formRelayAvailable() {
+    const host = window.location.hostname;
+    if (host !== '127.0.0.1' && host !== 'localhost') return Promise.resolve(false);
+    if (!formRelayPromise) {
+      formRelayPromise = fetch('/__formproxy', { cache: 'no-store' })
+        .then((res) => res.text())
+        .then((text) => text.trim() === 'cdd-form-proxy')
+        .catch(() => false);
+    }
+    return formRelayPromise;
+  }
+  function mirrorFormFrame(iframe) {
+    if (mirroredFrames.has(iframe) || iframe.dataset.heightMirror) return;
+    let url;
+    try { url = new URL(iframe.src, window.location.href); } catch (err) { return; }
+    if (url.hostname !== 'chatfromforms.com' && url.hostname !== 'www.chatfromforms.com') return;
+    mirroredFrames.add(iframe);
+    formRelayAvailable().then((ready) => {
+      if (!ready || !iframe.isConnected || iframe._heightMirror) return;
+      const mirror = document.createElement('iframe');
+      mirror.dataset.heightMirror = '1';
+      mirror.setAttribute('aria-hidden', 'true');
+      mirror.tabIndex = -1;
+      mirror.style.cssText = 'position:absolute;left:-10000px;top:0;width:0;height:2000px;border:0;opacity:0;pointer-events:none;';
+      const syncWidth = () => {
+        const width = iframe.getBoundingClientRect().width;
+        if (width > 0) mirror.style.width = `${width}px`;
+      };
+      syncWidth();
+      if (window.ResizeObserver) new ResizeObserver(syncWidth).observe(iframe);
+      mirror.src = `/__formproxy${url.pathname}${url.search}`;
+      document.body.appendChild(mirror);
+      iframe._heightMirror = mirror;
+    });
+  }
+  const frameObserver = new MutationObserver(() => {
+    document.querySelectorAll('[data-cddform] iframe').forEach(mirrorFormFrame);
+  });
+  if (document.body) frameObserver.observe(document.body, { childList: true, subtree: true });
+  document.querySelectorAll('[data-cddform] iframe').forEach(mirrorFormFrame);
+
   /* ── Forms ── */
   function buildMsg(n, e, p) {
     return encodeURIComponent(`Hi WorkNest SG! I'm interested in the part-time work from home opportunity.\n\nName: ${n}\nEmail: ${e}\nWhatsApp: ${p}`);

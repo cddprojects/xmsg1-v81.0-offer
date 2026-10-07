@@ -756,6 +756,11 @@
     body.home .mf-checks { list-style: none; display: flex; flex-direction: column; gap: 8px; }
     body.home .mf-checks li { font-size: 0.84rem; color: rgba(255,255,255,0.78); display: flex; align-items: center; gap: 8px; }
     body.home .mf-checks li::before { content: '✓'; color: #A8D5B5; font-weight: 700; }
+    body.home [data-cddform] iframe {
+      display: block;
+      width: 100%;
+      border: 0;
+    }
     body.home .mf-form { display: grid; gap: 10px; }
     body.home .mf-form input {
       background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.16);
