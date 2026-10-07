@@ -129,11 +129,29 @@
     window.location.href = 'thank-you/';
   }
 
-  /* ── Smooth scroll ── */
+  /* ── Smooth scroll, kept clear of the sticky header ── */
+  function stickyOffset() {
+    const nav = document.querySelector('nav');
+    return (nav ? nav.offsetHeight : 0) + 16;
+  }
+  function clearStickyHeader() {
+    const offset = `${stickyOffset()}px`;
+    document.querySelectorAll('#apply, #why, #how-it-works').forEach((el) => {
+      el.style.scrollMarginTop = offset;
+    });
+  }
+  clearStickyHeader();
+  window.addEventListener('resize', clearStickyHeader);
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      const href = a.getAttribute('href');
+      if (!href || href === '#') return;
+      const t = document.querySelector(href);
+      if (!t) return;
+      e.preventDefault();
+      clearStickyHeader();
+      const top = t.getBoundingClientRect().top + window.scrollY - stickyOffset();
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
     });
   });
 
