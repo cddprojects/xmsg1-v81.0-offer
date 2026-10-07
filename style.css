@@ -741,6 +741,7 @@
     body.home .mini-form-outer {
       background: var(--forest); border-radius: 16px;
       padding: 32px 24px;
+      scroll-margin-top: 76px;
     }
     @media (min-width: 768px) {
       body.home .mini-form-outer {
@@ -1335,6 +1336,6 @@
 
     @media (max-width: 480px) {
       body.thanks .card { padding: 36px 22px; }
-      body.thanks .btn-group { flex-direction: column; align-items: stretch; }
-      body.thanks .btn-primary, body.thanks .btn-ghost { text-align: center; justify-content: center; }
+      body.thanks .btn-group { flex-direction: column; align-items: center; }
+      body.thanks .btn-ghost { text-align: center; }
     }
