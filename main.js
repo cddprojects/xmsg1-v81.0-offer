@@ -108,7 +108,7 @@
 
   /* ── Forms ── */
   function buildMsg(n, e, p) {
-    return encodeURIComponent(`Hi WorkNest SG! I'm interested in the part-time work from home opportunity.\n\nName: ${n}\nEmail: ${e}\nWhatsApp: ${p}`);
+    return encodeURIComponent(`Hi Scoutlyft! I'm interested in the part-time work from home opportunity.\n\nName: ${n}\nEmail: ${e}\nWhatsApp: ${p}`);
   }
   function handleMini(ev) {
     ev.preventDefault();
