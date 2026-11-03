@@ -979,22 +979,6 @@
     }
     body.home .ft-bot a:hover { color: #fff; }
 
-    /* ════════════════════════════════
-       WA FLOAT (desktop only)
-    ════════════════════════════════ */
-    body.home .wa-float {
-      position: fixed; bottom: 24px; right: 20px; z-index: 400;
-      width: 56px; height: 56px; padding: 0;
-      background: var(--wa); color: #fff;
-      border-radius: 50%;
-      display: none; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    @media (min-width: 768px) { body.home .wa-float { display: flex; } }
-    body.home .wa-float:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(37,211,102,0.38); }
-    body.home .wa-float svg { width: 28px; height: 28px; }
-
 /* PDPA */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
